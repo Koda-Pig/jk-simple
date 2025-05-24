@@ -229,10 +229,23 @@ const easterEgg = (element: HTMLButtonElement) => {
 
 const projects = (element: HTMLElement) => {
   const iframes = element.querySelectorAll("iframe");
+
   iframes.forEach((iframe) => {
-    iframe.addEventListener("load", () => {
-      iframe.classList.remove("loading");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const iframe = entry.target as HTMLIFrameElement;
+        iframe.src = iframe.getAttribute("data-src") as string;
+        iframe.addEventListener("load", () =>
+          iframe.classList.remove("loading")
+        );
+
+        observer.unobserve(iframe);
+      });
     });
+
+    observer.observe(iframe);
   });
 };
 
