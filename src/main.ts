@@ -227,7 +227,17 @@ const easterEgg = (element: HTMLButtonElement) => {
   element.addEventListener("click", easterClick);
 };
 
+const projects = (element: HTMLElement) => {
+  const iframes = element.querySelectorAll("iframe");
+  iframes.forEach((iframe) => {
+    iframe.addEventListener("load", () => {
+      iframe.classList.remove("loading");
+    });
+  });
+};
+
 scrollBtn(document.getElementById("scroll-btn") as HTMLButtonElement);
 background(document.getElementById("bg-canvas") as HTMLCanvasElement);
 hamburger(document.getElementById("hamburger") as HTMLButtonElement);
 easterEgg(document.getElementById("pig-btn") as HTMLButtonElement);
+projects(document.getElementById("projects") as HTMLElement);

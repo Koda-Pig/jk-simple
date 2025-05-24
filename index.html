@@ -84,7 +84,7 @@
     </header>
     <main>
       <div class="wrapper">
-        <div class="intro">
+        <section class="intro">
           <div class="text">
             <h1 data-text="Josh Koter">Josh Koter</h1>
             <h2>Frontend Engineer</h2>
@@ -93,7 +93,32 @@
             <span class="sr-only">scroll down</span>
             <span class="arrow" />
           </button>
-        </div>
+        </section>
+        <section class="projects" id="projects">
+          <div class="project">
+            <h3 id="lisa-website">
+              <a
+                href="https://lisapottery.co.za/"
+                target="_blank"
+                rel="noopener"
+              >
+                Lisa's website
+              </a>
+            </h3>
+
+            <div class="projectWrapper">
+              <iframe
+                class="loading"
+                width="500"
+                height="500"
+                src="https://lisapottery.co.za/"
+                title="Lisa's website"
+                loading="lazy"
+                allow="geolocation"
+              ></iframe>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
     <script type="module" src="/src/main.ts"></script>
