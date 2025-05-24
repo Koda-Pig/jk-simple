@@ -16,6 +16,9 @@ declare global {
         isIdle: boolean;
         colors: string[];
       };
+      nav: {
+        isExpanded: boolean;
+      };
     };
   }
 }
@@ -39,6 +42,9 @@ window.jk_data = {
     },
     isIdle: true,
     colors: []
+  },
+  nav: {
+    isExpanded: false
   }
 };
 
@@ -205,12 +211,18 @@ const hamburger = (element: HTMLButtonElement) => {
   const toggleHamburger = () => {
     if (window.innerWidth > 1024) return;
     const isExpanded = element.getAttribute("aria-expanded") === "true";
-
+    window.jk_data.nav.isExpanded = !isExpanded;
+    document.getElementById("header")?.classList.toggle("open");
     element.setAttribute("aria-expanded", `${!isExpanded}`);
   };
   element.addEventListener("click", toggleHamburger);
 };
 
+const header = (element: HTMLElement) => {
+  console.log("header", element);
+};
+
 scrollBtn(document.getElementById("scroll-btn") as HTMLButtonElement);
 background(document.getElementById("bg-canvas") as HTMLCanvasElement);
 hamburger(document.getElementById("hamburger") as HTMLButtonElement);
+header(document.getElementById("header") as HTMLElement);
