@@ -98,7 +98,6 @@ export function background(element: HTMLCanvasElement) {
   let idleTimeout = setTimeout(() => {
     window.jk_data.background.isIdle = true;
   }, TIMEOUT);
-  let animationFrameId: number;
 
   const lerp = (start: number, end: number, speed: number) => {
     return start + (end - start) * speed;
@@ -191,7 +190,7 @@ export function background(element: HTMLCanvasElement) {
       colors: window.jk_data.background.colors
     });
 
-    animationFrameId = requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
   }
 
   animate();
