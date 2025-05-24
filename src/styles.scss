@@ -82,16 +82,28 @@ body {
   font-family: var(--font-noto-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
 }
 
-main::after {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  background-color: var(--background);
-  opacity: 0;
-  transition: opacity 0.5s;
+main {
+  width: 100%;
+  padding-inline: 16px;
+
+  @media (min-width: 768px) {
+    padding-inline: 32px;
+  }
+}
+
+main {
+  &::after {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background-color: var(--background);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
 }
 
 body:has(header[data-open="true"]) main::after {
@@ -274,6 +286,15 @@ button:not(:disabled) {
   @media (min-width: 1024px) {
     --heading-font-size: 12vw;
   }
+}
+
+.canvas {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-color: var(--background);
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes shiftDown {

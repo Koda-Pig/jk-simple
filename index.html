@@ -23,18 +23,21 @@
     <title>Josh Koter - Frontend Engineer</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="intro">
-        <div class="text">
-          <h1 data-text="Josh Koter">Josh Koter</h1>
-          <h2>Frontend Engineer</h2>
+    <canvas class="canvas" id="bg-canvas"></canvas>
+    <main>
+      <div class="wrapper">
+        <div class="intro">
+          <div class="text">
+            <h1 data-text="Josh Koter">Josh Koter</h1>
+            <h2>Frontend Engineer</h2>
+          </div>
+          <button type="button" class="point-down" id="scroll-btn">
+            <span class="sr-only">scroll down</span>
+            <span class="arrow" />
+          </button>
         </div>
-        <button type="button" class="point-down" id="scroll-btn">
-          <span class="sr-only">scroll down</span>
-          <span class="arrow" />
-        </button>
       </div>
-    </div>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

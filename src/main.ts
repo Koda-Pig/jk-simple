@@ -1,6 +1,5 @@
 import "./styles.scss";
 
-// setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
 declare global {
   interface Window {
     jk_data: {
