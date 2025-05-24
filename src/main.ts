@@ -201,5 +201,16 @@ export function background(element: HTMLCanvasElement) {
   window.addEventListener("resize", debouncedResize);
 }
 
+const hamburger = (element: HTMLButtonElement) => {
+  const toggleHamburger = () => {
+    if (window.innerWidth > 1024) return;
+    const isExpanded = element.getAttribute("aria-expanded") === "true";
+
+    element.setAttribute("aria-expanded", `${!isExpanded}`);
+  };
+  element.addEventListener("click", toggleHamburger);
+};
+
 scrollBtn(document.getElementById("scroll-btn") as HTMLButtonElement);
 background(document.getElementById("bg-canvas") as HTMLCanvasElement);
+hamburger(document.getElementById("hamburger") as HTMLButtonElement);

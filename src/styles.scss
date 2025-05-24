@@ -297,6 +297,54 @@ button:not(:disabled) {
   height: 100%;
 }
 
+.hamburger {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  background-color: rgba(var(--rgb-background), 0.5);
+
+  svg {
+    transition: rotate 0.8s, transform 0.8s;
+  }
+
+  path {
+    fill: none;
+    stroke: var(--foreground);
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 60 31 60 300;
+    transition-property: stroke-dasharray, stroke-dashoffset;
+    transition-duration: var(--transition-long);
+    transition-timing-function: var(--transition-zip);
+  }
+
+  &[aria-expanded="true"] {
+    svg {
+      transform: translate(3px, -4px) rotate(45deg);
+    }
+
+    path {
+      stroke-dashoffset: -90;
+      stroke-dasharray: 60 105 60 300;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
 @keyframes shiftDown {
   to {
     mask-position: 50% -150%;
