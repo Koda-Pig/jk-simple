@@ -218,11 +218,16 @@ const hamburger = (element: HTMLButtonElement) => {
   element.addEventListener("click", toggleHamburger);
 };
 
-const header = (element: HTMLElement) => {
-  console.log("header", element);
+const easterEgg = (element: HTMLButtonElement) => {
+  const pigSound = element.querySelector("#oink-audio") as HTMLAudioElement;
+  const easterClick = () => {
+    pigSound?.play();
+    element.classList.add("disappear");
+  };
+  element.addEventListener("click", easterClick);
 };
 
 scrollBtn(document.getElementById("scroll-btn") as HTMLButtonElement);
 background(document.getElementById("bg-canvas") as HTMLCanvasElement);
 hamburger(document.getElementById("hamburger") as HTMLButtonElement);
-header(document.getElementById("header") as HTMLElement);
+easterEgg(document.getElementById("pig-btn") as HTMLButtonElement);
