@@ -278,12 +278,7 @@ const quotesSection = (element: HTMLElement) => {
 
   const html = quotes.map(
     (quote) =>
-      `<p class="quote-text">
-        <em>“<span class="inner">${quote.content}</span>”</em>
-        <br />
-        ~<br />
-        <span class="author">${quote.author}</span>
-      </p>`
+      `<p class="quote-text"><em>“<span class="inner">${quote.content}</span>”</em><br />~<br /><span class="author">${quote.author}</span></p>`
   );
 
   btn.innerHTML = html.join("");
