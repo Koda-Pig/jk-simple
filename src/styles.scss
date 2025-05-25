@@ -391,6 +391,7 @@ button:not(:disabled) {
     position: sticky;
     top: 0;
     min-height: 100svh;
+    width: 20ch;
   }
 }
 
@@ -476,7 +477,7 @@ a.menu-item {
 }
 
 .expandable {
-  label {
+  summary {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -517,20 +518,14 @@ a.menu-item {
     }
   }
 
-  input {
-    appearance: none;
-    width: 0;
-    height: 0;
+  &[open] {
+    .expandable-content {
+      grid-template-rows: 1fr;
+    }
 
-    &:checked {
-      ~ .expandable-content {
-        grid-template-rows: 1fr;
-      }
-
-      ~ label {
-        .chevron {
-          transform: scale(1, -1);
-        }
+    summary {
+      .chevron {
+        transform: scale(1, -1);
       }
     }
   }
