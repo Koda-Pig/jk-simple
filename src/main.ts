@@ -1,5 +1,5 @@
-import "./styles.scss";
 import { quotes } from "./data";
+import "./styles.scss";
 
 type Cords = {
   x: number;
