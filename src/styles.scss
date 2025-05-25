@@ -608,11 +608,6 @@ a.menuItem {
       &::-webkit-media-controls {
         display: none;
       }
-      &.loading {
-        .play-icon {
-          opacity: 0;
-        }
-      }
     }
     .play-icon {
       pointer-events: none;
@@ -641,6 +636,7 @@ a.menuItem {
       background-color: var(--background);
       border-radius: 4px;
       overflow: hidden;
+      z-index: 1;
       transition: opacity 0.3s ease;
 
       &::after {
