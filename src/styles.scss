@@ -153,29 +153,26 @@ h6 {
 a {
   color: var(--accent);
   text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition: var(--transition-short) color;
 
-  &:not(.link--unstyled) {
-    position: relative;
-    display: inline-block;
-    transition: var(--transition-short) color;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    width: 0;
+    height: 0.1em;
+    background-color: currentColor;
+    transition: var(--transition-short) width;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: inherit;
 
     &::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      width: 0;
-      height: 0.1em;
-      background-color: currentColor;
-      transition: var(--transition-short) width;
-    }
-
-    &:hover,
-    &:focus-visible {
-      color: inherit;
-
-      &::after {
-        width: 100%;
-      }
+      width: 100%;
     }
   }
 }
@@ -435,7 +432,7 @@ button:not(:disabled) {
   }
 }
 
-.menuItem {
+.menu-item {
   display: inline-block;
   width: max-content;
   padding: 8px 16px;
@@ -445,7 +442,7 @@ button:not(:disabled) {
   font-weight: 100;
 }
 
-a.menuItem {
+a.menu-item {
   position: relative;
 
   &::before,
@@ -526,7 +523,7 @@ a.menuItem {
     height: 0;
 
     &:checked {
-      ~ .expandableContent {
+      ~ .expandable-content {
         grid-template-rows: 1fr;
       }
 
@@ -538,12 +535,12 @@ a.menuItem {
     }
   }
 
-  &Content {
+  &-content {
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows var(--transition-short) var(--transition-zip);
 
-    &Inner {
+    &-inner {
       overflow: clip;
       min-height: 0;
       margin-left: 12px;
