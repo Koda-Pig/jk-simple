@@ -239,10 +239,14 @@ const projects = (element: HTMLElement) => {
       target.src = target.getAttribute("data-src") as string;
       const skelly = target.previousElementSibling as HTMLElement;
       const event = target.tagName === "VIDEO" ? "loadeddata" : "load";
-      target.addEventListener(event, () => {
-        skelly.classList.add("hide");
-        target.classList.remove("loading");
-      });
+      target.addEventListener(
+        event,
+        () => {
+          skelly.classList.add("hide");
+          target.classList.remove("loading");
+        },
+        { once: true }
+      );
 
       observer.unobserve(target);
     });

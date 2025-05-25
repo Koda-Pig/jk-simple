@@ -4,23 +4,24 @@
 }
 
 @font-face {
-  font-family: "Unica One";
-  src: url("/fonts/UnicaOne-Regular.ttf") format("truetype");
+  font-family: "Host Grotesk";
+  src: url("/fonts/HostGrotesk.ttf") format("truetype");
+  font-display: swap;
 }
-
 @font-face {
   font-family: "Lexend";
   src: url("/fonts/Lexend.ttf") format("truetype");
+  font-display: swap;
 }
-
 @font-face {
   font-family: "Noto Sans";
   src: url("/fonts/NotoSansJP.ttf") format("truetype");
+  font-display: swap;
 }
-
 @font-face {
-  font-family: "Host Grotesk";
-  src: url("/fonts/HostGrotesk.ttf") format("truetype");
+  font-family: "Unica One";
+  src: url("/fonts/UnicaOne-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 :root {
@@ -612,11 +613,16 @@ a.menuItem {
       &::-webkit-media-controls {
         display: none;
       }
+      &.loading {
+        .play-icon {
+          opacity: 0;
+        }
+      }
     }
     .play-icon {
+      pointer-events: none;
       position: absolute;
       inset: 0;
-      pointer-events: cursor;
       margin: auto;
       width: 64px;
       height: 64px;
@@ -629,7 +635,6 @@ a.menuItem {
 
       &.hide {
         opacity: 0;
-        pointer-events: none;
         filter: blur(32px);
       }
     }
