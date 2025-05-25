@@ -673,6 +673,31 @@ a.menuItem {
   }
 }
 
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+
+  a {
+    display: grid;
+    place-items: center;
+    font-size: 1.25rem;
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.about {
+  max-width: 60ch;
+  font-size: 1.125rem;
+  margin-bottom: 64px;
+
+  p {
+    margin-bottom: 16px;
+  }
+}
+
 @keyframes shiftDown {
   to {
     mask-position: 50% -150%;
