@@ -229,23 +229,36 @@ const easterEgg = (element: HTMLButtonElement) => {
 
 const projects = (element: HTMLElement) => {
   const iframes = element.querySelectorAll("iframe");
+  const videos = element.querySelectorAll("video");
 
-  iframes.forEach((iframe) => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
 
-        const iframe = entry.target as HTMLIFrameElement;
-        iframe.src = iframe.getAttribute("data-src") as string;
-        iframe.addEventListener("load", () =>
-          iframe.classList.remove("loading")
-        );
-
-        observer.unobserve(iframe);
+      const target = entry.target as HTMLIFrameElement | HTMLVideoElement;
+      target.src = target.getAttribute("data-src") as string;
+      const skelly = target.previousElementSibling as HTMLElement;
+      const event = target.tagName === "VIDEO" ? "loadeddata" : "load";
+      target.addEventListener(event, () => {
+        skelly.classList.add("hide");
+        target.classList.remove("loading");
       });
-    });
 
-    observer.observe(iframe);
+      observer.unobserve(target);
+    });
+  });
+
+  [...videos, ...iframes].forEach((el) => {
+    observer.observe(el);
+
+    if (el.tagName !== "VIDEO") return;
+
+    const video = el as HTMLVideoElement;
+    const playIcon = video.nextElementSibling as SVGElement;
+    video.addEventListener("click", () => {
+      playIcon.classList.toggle("hide");
+      video.paused ? video.play() : video.pause();
+    });
   });
 };
 
