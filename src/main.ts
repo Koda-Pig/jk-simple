@@ -1,4 +1,5 @@
 import "./styles.scss";
+import { quotes } from "./data";
 
 type Cords = {
   x: number;
@@ -18,6 +19,9 @@ declare global {
       };
       nav: {
         isExpanded: boolean;
+      };
+      quotes: {
+        currentIndex: number;
       };
     };
   }
@@ -45,6 +49,9 @@ window.jk_data = {
   },
   nav: {
     isExpanded: false
+  },
+  quotes: {
+    currentIndex: 0
   }
 };
 
@@ -266,8 +273,35 @@ const projects = (element: HTMLElement) => {
   });
 };
 
+const quotesSection = (element: HTMLElement) => {
+  const btn = element.querySelector("button") as HTMLButtonElement;
+
+  const html = quotes.map(
+    (quote) =>
+      `<p class="quote-text">
+        <em>“<span class="inner">${quote.content}</span>”</em>
+        <br />
+        ~<br />
+        <span class="author">${quote.author}</span>
+      </p>`
+  );
+
+  btn.innerHTML = html.join("");
+  const nodes = Array.from(btn.querySelectorAll(".quote-text"));
+  nodes[0].classList.add("active");
+
+  btn.addEventListener("click", () => {
+    window.jk_data.quotes.currentIndex =
+      (window.jk_data.quotes.currentIndex + 1) % quotes.length;
+
+    nodes.forEach((node) => node.classList.remove("active"));
+    nodes[window.jk_data.quotes.currentIndex].classList.add("active");
+  });
+};
+
 scrollBtn(document.getElementById("scroll-btn") as HTMLButtonElement);
 background(document.getElementById("bg-canvas") as HTMLCanvasElement);
 hamburger(document.getElementById("hamburger") as HTMLButtonElement);
 easterEgg(document.getElementById("pig-btn") as HTMLButtonElement);
 projects(document.getElementById("projects") as HTMLElement);
+quotesSection(document.getElementById("quotes") as HTMLElement);
