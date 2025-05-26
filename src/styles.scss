@@ -32,7 +32,6 @@
   --link: var(--blue);
 
   --rgb-background: 22, 22, 29;
-  --rgb-foreground: 237, 237, 237;
 
   --spotlight-color-1: rgba(var(--rgb-blue), 0.2);
   --spotlight-color-2: rgba(var(--rgb-blue-light), 0.15);
@@ -40,11 +39,7 @@
 
   --accent: #94a2e1;
   --blue: rgb(var(--rgb-blue));
-  --blue-light: rgb(var(--rgb-blue-light));
-  --blue-lighter: rgb(var(--rgb-blue-lighter));
-  --blue-dark: rgb(var(--rgb-blue-dark));
 
-  --rgb-blue-dark: 75, 99, 139;
   --rgb-blue: 121, 178, 210;
   --rgb-blue-light: 186, 229, 233;
   --rgb-blue-lighter: 222, 242, 235;
@@ -61,17 +56,11 @@
   --font-host-grotesk: "Host Grotesk", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --as-you-should: #d00;
-  }
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: #0000;
 }
 
 html {
@@ -84,8 +73,6 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: var(--font-noto-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -113,7 +100,7 @@ main {
   }
 }
 
-body:has(header[data-open="true"]) main::after {
+body:has(#hamburger[aria-expanded="true"]) main::after {
   opacity: 0.5;
 }
 
@@ -136,18 +123,6 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
 }
 
 a {
@@ -219,9 +194,7 @@ button:not(:disabled) {
     h1 {
       font-size: var(--heading-font-size);
       font-family: var(--font-unica-one);
-      color: var(--foreground);
       position: relative;
-      margin-block: 0;
 
       &::after {
         content: attr(data-text);
@@ -229,7 +202,7 @@ button:not(:disabled) {
         inset: 0;
         color: var(--accent);
         animation: wave 30s linear infinite;
-        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='wave' x='0' y='1' width='100%25' height='110%25' patternUnits='userSpaceOnUse'%3E%3Cpath id='wavePath' d='M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z' fill='%23fff' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='20' fill='url(%23wave)' /%3E%3C/svg%3E%0A");
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='wave' x='0' y='1' width='100%25' height='110%25' patternUnits='userSpaceOnUse'%3E%3Cpath id='wavePath' d='M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z' fill='%23fff' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='20' fill='url(%23wave)' /%3E%3C/svg%3E%0A");
         mask-size: 200%;
         mask-position: 0%;
       }
@@ -238,7 +211,6 @@ button:not(:disabled) {
     h2 {
       font-size: var(--subheading-font-size);
       letter-spacing: 0.285em;
-      text-transform: uppercase;
       font-family: var(--font-lexend);
       font-weight: 500;
     }
@@ -246,8 +218,8 @@ button:not(:disabled) {
 
   .point-down {
     margin: auto auto 0;
-    background-color: transparent;
-    border: 3px solid currentColor;
+    background-color: #0000;
+    border: 3px solid;
     position: relative;
     transition: background-color var(--transition-long);
     border-radius: 1in;
@@ -264,11 +236,10 @@ button:not(:disabled) {
       position: absolute;
       inset: 0;
       pointer-events: none;
-      mask-size: 100% 200%;
-      mask-position: 50%;
-      background-color: var(--foreground);
+      mask: url("data:image/svg+xml,%3Csvg fill='%23000000' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke-width='0'%3E%3C/g%3E%3Cg stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M5.293,16.707a1,1,0,0,1,1.414-1.414L11,19.586V2a1,1,0,0,1,2,0V19.586l4.293-4.293a1,1,0,0,1,1.414,1.414l-6,6a1,1,0,0,1-1.414,0Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E")
+        50% / 100% 200%;
+      background: var(--foreground);
       transition: background-color var(--transition-long);
-      mask-image: url("data:image/svg+xml,%3Csvg fill='%23000000' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M5.293,16.707a1,1,0,0,1,1.414-1.414L11,19.586V2a1,1,0,0,1,2,0V19.586l4.293-4.293a1,1,0,0,1,1.414,1.414l-6,6a1,1,0,0,1-1.414,0Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
     }
 
     &.animate {
@@ -313,7 +284,7 @@ button:not(:disabled) {
   border: none;
   cursor: pointer;
   position: fixed;
-  background-color: transparent;
+  background-color: #0000;
   border-radius: 50%;
   border: 1px solid currentColor;
   background-color: rgba(var(--rgb-background), 0.5);
@@ -401,7 +372,7 @@ button:not(:disabled) {
   display: block;
   margin-inline: auto;
   max-width: 175px;
-  background-color: transparent;
+  background-color: #0000;
   border: none;
   transition-property: filter, opacity;
   transition-duration: var(--transition-longest);
@@ -502,7 +473,7 @@ a.menu-item {
     gap: 24px;
 
     &::selection {
-      background-color: transparent;
+      background-color: #0000;
     }
 
     &:hover,
@@ -705,7 +676,7 @@ a.menu-item {
 .quote {
   position: relative;
   cursor: pointer;
-  background-color: transparent;
+  background-color: #0000;
   border: none;
   width: 100%;
   text-align: left;
@@ -748,7 +719,7 @@ a.menu-item {
     filter: drop-shadow(0 0) drop-shadow(0 0);
   }
   to {
-    filter: drop-shadow(0 12px transparent) drop-shadow(0 24px transparent);
+    filter: drop-shadow(0 12px #0000) drop-shadow(0 24px #0000);
   }
 }
 
