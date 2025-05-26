@@ -15,7 +15,7 @@
 }
 @font-face {
   font-family: "Noto Sans";
-  src: url("/fonts/NotoSansJP.woff2") format("truetype");
+  src: url("/fonts/NotoSans-VariableFont.woff2") format("truetype");
   font-display: swap;
 }
 @font-face {
@@ -563,7 +563,7 @@ a.menu-item {
   grid-template-columns: 100%;
 
   @media screen and (min-width: 500px) {
-    grid-template-columns: repeat(auto-fill, minmax(52ch, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50ch, 1fr));
   }
 
   .project {
@@ -579,6 +579,7 @@ a.menu-item {
 
     p {
       margin-bottom: 2rem;
+      line-height: 1.8;
 
       + * {
         margin-top: auto;
@@ -691,6 +692,7 @@ a.menu-item {
 
   p {
     margin-bottom: 16px;
+    line-height: 1.8;
   }
 }
 
