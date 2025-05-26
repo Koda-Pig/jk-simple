@@ -11,6 +11,7 @@ A lot of people would say this is a bad idea, but the hard facts are that this s
 - Image assets are converted to webp and minified.
 - Iframes and videos are only loaded once they are scrolled into view.
 - SVG icons are inlined in the html.
+- HTML is minified with a custom script.
 
 These optimisations result in a Lighthouse score of (96 ~ 99)/100.
 
