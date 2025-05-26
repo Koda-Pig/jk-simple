@@ -13,3 +13,7 @@ A lot of people would say this is a bad idea, but the hard facts are that this s
 - SVG icons are inlined in the html.
 
 These optimisations result in a Lighthouse score of (96 ~ 99)/100.
+
+## External links
+
+[joshkoter.com](https://joshkoter.com)
