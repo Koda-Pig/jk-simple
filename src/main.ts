@@ -1,8 +1,6 @@
 import { quotes } from "./data";
 import "./styles.scss";
 
-// noto sans is huge, must replace, ,
-
 type Cords = {
   x: number;
   y: number;
