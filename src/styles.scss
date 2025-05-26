@@ -178,7 +178,7 @@ button:not(:disabled) {
 }
 
 .intro {
-  --heading-font-size: 18vw;
+  --heading-font-size: max(18vw, 3rem);
   --subheading-font-size: calc(var(--heading-font-size) * 0.26);
   min-height: 100svh;
   display: grid;
@@ -253,7 +253,7 @@ button:not(:disabled) {
   }
 
   @media (min-width: 1024px) {
-    --heading-font-size: 12vw;
+    --heading-font-size: max(12vw, 3rem);
   }
 }
 
