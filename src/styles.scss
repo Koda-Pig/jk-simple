@@ -129,6 +129,10 @@ h6 {
 h1 {
   font-size: 3rem;
 }
+:where(h1) {
+  font-size: 3rem;
+  margin-block: 0.67em;
+}
 
 h2 {
   font-size: 2rem;
@@ -221,6 +225,7 @@ button:not(:disabled) {
       font-family: var(--font-unica-one);
       color: var(--foreground);
       position: relative;
+      margin-block: 0;
 
       &::after {
         content: attr(data-text);
