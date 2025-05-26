@@ -17,9 +17,6 @@ declare global {
         isIdle: boolean;
         colors: string[];
       };
-      nav: {
-        isExpanded: boolean;
-      };
       quotes: {
         currentIndex: number;
       };
@@ -46,9 +43,6 @@ window.jk_data = {
     },
     isIdle: true,
     colors: []
-  },
-  nav: {
-    isExpanded: false
   },
   quotes: {
     currentIndex: 0
@@ -215,14 +209,12 @@ export function background(element: HTMLCanvasElement) {
 }
 
 const hamburger = (element: HTMLButtonElement) => {
-  const toggleHamburger = () => {
+  const header = document.getElementById("header") as HTMLElement;
+
+  element.addEventListener("click", () => {
     if (window.innerWidth > 1024) return;
-    const isExpanded = element.getAttribute("aria-expanded") === "true";
-    window.jk_data.nav.isExpanded = !isExpanded;
-    document.getElementById("header")?.classList.toggle("open");
-    element.setAttribute("aria-expanded", `${!isExpanded}`);
-  };
-  element.addEventListener("click", toggleHamburger);
+    header.classList.toggle("open");
+  });
 };
 
 const easterEgg = (element: HTMLButtonElement) => {
@@ -294,9 +286,22 @@ const quotesSection = (element: HTMLElement) => {
   });
 };
 
+const header = (element: HTMLElement) => {
+  const links = element.querySelectorAll("a") as NodeListOf<HTMLAnchorElement>;
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      const isOpen = element.classList.contains("open");
+      if (!isOpen) return;
+      element.classList.remove("open");
+    });
+  });
+};
+
 scrollBtn(document.getElementById("scroll-btn") as HTMLButtonElement);
 background(document.getElementById("bg-canvas") as HTMLCanvasElement);
 hamburger(document.getElementById("hamburger") as HTMLButtonElement);
 easterEgg(document.getElementById("pig-btn") as HTMLButtonElement);
 projects(document.getElementById("projects") as HTMLElement);
 quotesSection(document.getElementById("quotes") as HTMLElement);
+header(document.getElementById("header") as HTMLElement);

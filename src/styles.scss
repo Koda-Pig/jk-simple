@@ -73,18 +73,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   background: var(--background);
+
+  &:has(header.open) {
+    main::after {
+      opacity: 0.5;
+    }
+    .hamburger {
+      svg {
+        transform: translate(3px, -4px) rotate(45deg);
+      }
+
+      path {
+        stroke-dashoffset: -90;
+        stroke-dasharray: 60 105 60 300;
+      }
+    }
+  }
 }
 
 main {
   width: 100%;
   padding-inline: 16px;
 
-  @media (min-width: 768px) {
-    padding-inline: 32px;
-  }
-}
-
-main {
   &::after {
     content: "";
     pointer-events: none;
@@ -94,10 +104,10 @@ main {
     opacity: 0;
     transition: opacity 0.5s;
   }
-}
 
-body:has(#hamburger[aria-expanded="true"]) main::after {
-  opacity: 0.5;
+  @media (min-width: 768px) {
+    padding-inline: 32px;
+  }
 }
 
 h1,
@@ -290,17 +300,6 @@ button:not(:disabled) {
     transition-property: stroke-dasharray, stroke-dashoffset;
     transition-duration: var(--transition-long);
     transition-timing-function: var(--transition-zip);
-  }
-
-  &[aria-expanded="true"] {
-    svg {
-      transform: translate(3px, -4px) rotate(45deg);
-    }
-
-    path {
-      stroke-dashoffset: -90;
-      stroke-dasharray: 60 105 60 300;
-    }
   }
 
   @media (min-width: 1024px) {
@@ -604,6 +603,7 @@ a.menu-item {
       svg {
         width: 145%;
         position: absolute;
+        pointer-events: none;
         background: radial-gradient(
           circle,
           rgba(var(--rgb-background), 0.9) 0%,
