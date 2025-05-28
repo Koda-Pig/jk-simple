@@ -1,8 +1,8 @@
-# The wrong way?
+# Why
 
 I initally built this site with react and next. It was over-engineered, over-abstracted, and over-complicated.
-This iteration uses native HTML elements (like `<details>` for menus) and things that would generally be considered bad practice (like storing page state in the window object), instead of framework abstractions. Typescript, Sass, and Handlebars are used for a better DX.
-A lot of people would say this is a bad idea, but the hard facts are that this site is so much faster, smaller, and simpler than the previous iteration.
+This iteration uses native HTML elements (like `<details>` for menus) and some other things that would generally be considered bad practice (like storing page state in the window object), instead of framework abstractions. Typescript, Sass, and Handlebars are used for a better DX.
+No frameworks, but we have components, interactivity and state without it. This site is much faster, smaller, and simpler than the previous iteration.
 
 ## Optimisations
 
