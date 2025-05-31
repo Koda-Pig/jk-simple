@@ -1,5 +1,6 @@
 import { quotes } from "./data";
 import "./styles.scss";
+import { w3CodeColorize } from "./colorize";
 
 type Cords = {
   x: number;
@@ -65,6 +66,7 @@ export function debounce<T extends unknown[]>(
 }
 
 export function scrollBtn(element: HTMLButtonElement) {
+  if (!element) return;
   const scrollDown = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -94,6 +96,7 @@ export function scrollBtn(element: HTMLButtonElement) {
 }
 
 export function background(element: HTMLCanvasElement) {
+  if (!element) return;
   const canvas = element;
   const speed = 0.05;
   canvas.width = window.innerWidth;
@@ -209,6 +212,7 @@ export function background(element: HTMLCanvasElement) {
 }
 
 const hamburger = (element: HTMLButtonElement) => {
+  if (!element) return;
   const header = document.getElementById("header") as HTMLElement;
 
   element.addEventListener("click", () => {
@@ -218,6 +222,7 @@ const hamburger = (element: HTMLButtonElement) => {
 };
 
 const easterEgg = (element: HTMLButtonElement) => {
+  if (!element) return;
   const pigSound = element.querySelector("#oink-audio") as HTMLAudioElement;
   const easterClick = () => {
     pigSound?.play();
@@ -227,6 +232,7 @@ const easterEgg = (element: HTMLButtonElement) => {
 };
 
 const projects = (element: HTMLElement) => {
+  if (!element) return;
   const iframes = element.querySelectorAll("iframe");
   const videos = element.querySelectorAll("video");
 
@@ -266,6 +272,7 @@ const projects = (element: HTMLElement) => {
 };
 
 const quotesSection = (element: HTMLElement) => {
+  if (!element) return;
   const btn = element.querySelector("button") as HTMLButtonElement;
 
   const html = quotes.map(
@@ -287,6 +294,7 @@ const quotesSection = (element: HTMLElement) => {
 };
 
 const header = (element: HTMLElement) => {
+  if (!element) return;
   const links = element.querySelectorAll("a") as NodeListOf<HTMLAnchorElement>;
 
   links.forEach((link) => {
@@ -298,6 +306,23 @@ const header = (element: HTMLElement) => {
   });
 };
 
+function escapeHtml(text: string) {
+  return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+const blog = (element: HTMLElement) => {
+  if (!element) return;
+  const codes = element.querySelectorAll(".code") as NodeListOf<HTMLDivElement>;
+  codes.forEach((code) => {
+    const lang = code.getAttribute("lang") as string;
+    console.log(lang);
+    const script = code.querySelector("script") as HTMLScriptElement;
+    let text = script.innerText.replace(/`/g, "");
+    text = escapeHtml(text);
+    code.innerHTML = w3CodeColorize(text, lang);
+  });
+};
+
 scrollBtn(document.getElementById("scroll-btn") as HTMLButtonElement);
 background(document.getElementById("bg-canvas") as HTMLCanvasElement);
 hamburger(document.getElementById("hamburger") as HTMLButtonElement);
@@ -305,3 +330,4 @@ easterEgg(document.getElementById("pig-btn") as HTMLButtonElement);
 projects(document.getElementById("projects") as HTMLElement);
 quotesSection(document.getElementById("quotes") as HTMLElement);
 header(document.getElementById("header") as HTMLElement);
+blog(document.getElementById("blog") as HTMLElement);
