@@ -725,7 +725,7 @@ a.menu-item {
     margin-block: 1rem;
     font-family: monospace;
     background: black;
-    color: var(--foreground);
+    color: rgb(var(--rgb-blue));
     padding: 1rem;
     border-radius: 0.5rem;
     border: 1px solid var(--foreground);
@@ -735,6 +735,13 @@ a.menu-item {
     word-wrap: break-word;
     overflow-wrap: break-word;
     tab-size: 2;
+
+    &-inline {
+      display: inline-block;
+      padding: 0.2rem 0.4rem;
+      border: none;
+      margin-block: 0;
+    }
   }
 }
 

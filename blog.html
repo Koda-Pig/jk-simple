@@ -102,8 +102,40 @@
                   <li>50px = 54q</li>
                 </ul>
               </li>
+              <li>
+                Use the shortest possible selector. Eg:
+                <ul>
+                  <li>html = &</li>
+                  <li>
+                    body = &>* (although careful with this one if you change the
+                    display property of the body)
+                  </li>
+                  <li>
+                    With CSS nesting you can usually get away without selectors
+                    by chaining them together with siblings selectors, but if
+                    you do need a class, rather use a single letter attribute
+                    selector. For example, instead of this:
+                    <div class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`<p class="first">...`</script>
+                    </div>
+                    <div class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`.first{...`</script>
+                    </div>
+                    do this:
+                    <div class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`<p f>...`</script>
+                    </div>
+                    <div class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`[f]{...`</script>
+                    </div>
+                  </li>
+                </ul>
+              </li>
             </ul>
-            <p></p>
           </div>
         </section>
         {{> blogs/blog1}} {{> blogs/blog2}}
