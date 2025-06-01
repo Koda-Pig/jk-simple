@@ -9,5 +9,13 @@ export default defineConfig({
       partialDirectory: resolve(__dirname, "src/partials")
     }),
     minifyHTML()
-  ]
+  ],
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        blog: "blog.html"
+      }
+    }
+  }
 });
