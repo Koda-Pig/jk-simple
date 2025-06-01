@@ -1,6 +1,6 @@
 import { quotes } from "./data";
 import "./styles.scss";
-import { w3CodeColorize } from "./colorize";
+// import { w3CodeColorize } from "./colorize";
 
 type Cords = {
   x: number;
@@ -314,12 +314,12 @@ const blog = (element: HTMLElement) => {
   if (!element) return;
   const codes = element.querySelectorAll(".code") as NodeListOf<HTMLDivElement>;
   codes.forEach((code) => {
-    const lang = code.getAttribute("lang") as string;
-    console.log(lang);
+    // const lang = code.getAttribute("lang") as string; // lang used for syntax highlighting
     const script = code.querySelector("script") as HTMLScriptElement;
     let text = script.innerText.replace(/`/g, "");
     text = escapeHtml(text);
-    code.innerHTML = w3CodeColorize(text, lang);
+    code.innerHTML = text;
+    // code.innerHTML = w3CodeColorize(text, lang);
   });
 };
 
