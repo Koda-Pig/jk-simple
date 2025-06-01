@@ -690,6 +690,20 @@ a.menu-item {
 }
 
 .blog {
+  ul,
+  ol {
+    margin-left: 2ch;
+    margin-block: 1ch;
+    ul,
+    ol {
+      margin-left: 1ch;
+      margin-block: 1ch;
+    }
+  }
+  p {
+    margin-bottom: 1ch;
+  }
+
   &-intro {
     h2 {
       margin-bottom: 0.5rem;
