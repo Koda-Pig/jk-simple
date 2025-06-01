@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon-light.ico"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon-dark.ico"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend.woff2"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/NotoSans-VariableFont.woff2"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/UnicaOne-Regular.woff2"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+
+    <meta
+      name="description"
+      content="Josh Koter is a frontend engineer who builds things."
+    />
+    <title>Josh Koter - Blog</title>
+    <style>
+      :where(h1) {
+        margin-block: 0.67em;
+        font-size: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="canvas" id="bg-canvas"></canvas>
+    <button
+      type="button"
+      class="hamburger"
+      id="hamburger"
+      title="Toggle navigation menu"
+    >
+      <svg viewBox="-10 -10 120 120">
+        <path
+          d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
+        />
+      </svg>
+    </button>
+    {{> header}}
+    <main>
+      <div class="wrapper blog" id="blog">
+        {{> intro title="Blog" }}
+        <section class="blog-section">
+          <div class="blog-intro">
+            <h2>What's this about?</h2>
+            <p>
+              I'm a big fan of CSS code golf. The idea is to replicate a given
+              image using only css and html, in as few characters as possible. I
+              play it
+              <a href="https://cssbattle.dev/" target="_blank" rel="noopener"
+                >here</a
+              >. If I score in the top 10, I'll write about it. I'm not good at
+              writing so keep the expectations nice and low.
+            </p>
+            <p>Here are some general tips:</p>
+            <ul>
+              <li>
+                Minify everything
+                <ul>
+                  <li>whitespace</li>
+                  <li>newlines</li>
+                  <li>last semicolon</li>
+                  <li>last closing bracket</li>
+                </ul>
+              </li>
+              <li>
+                Find the shortest possible unit. This means dropping the unit
+                altogether for some properties like margin and padding. Eg:
+                margin: 5; instead of margin: 5px. Use percentage or q value.
+                Some examples:
+                <ul>
+                  <li>20px = 5vw</li>
+                  <li>40px = 5ch</li>
+                  <li>10px = 11Q</li>
+                  <li>50px = 54q</li>
+                </ul>
+              </li>
+              <li>
+                Use the shortest possible selector. Eg:
+                <ul>
+                  <li>html = &</li>
+                  <li>
+                    body = &>* (although careful with this one if you change the
+                    display property of the body)
+                  </li>
+                  <li>
+                    With CSS nesting you can usually get away without classes to
+                    select elements by chaining them together with siblings
+                    selectors in nested rules, but if you do need a class,
+                    rather use a single letter attribute as a selector. For
+                    example, instead of this:
+                    <div class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`<p class="first">...`</script>
+                    </div>
+                    <div class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`.first{...`</script>
+                    </div>
+                    do this:
+                    <div class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`<p f>...`</script>
+                    </div>
+                    <div class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`[f]{...`</script>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+        {{> blogs/blog1}} {{> blogs/blog2}}
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

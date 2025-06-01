@@ -1,0 +1,51 @@
+<article>
+  {{#> blog-post title="Target (31/05/2025) - 6/10"}}
+  <img
+    src="/css-battle/2025-05-31.png"
+    alt="Target (31/05/2025) - 6/10"
+    width="400"
+    height="300"
+  />
+  <p>Solution (134 characters):</p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>`<p><img><style>*{background:#F3AC3C;border-block:5ch solid#282828;rotate:45deg;margin:30 190;*{margin:0;p{margin:-80 0;*{padding:40 10`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+  <p>
+    The idea here was to use multiple elements that all have a rectangle on
+    their left and right sides. The shortest way I know of doing this is with
+    border-inline or border-block. So we give every element (html, body and p)
+    the border styles and background as well as a rotatation. Then there is just
+    margin for positioning and padding to set the size of the img tag.
+  </p>
+  <p><strong>Markup:</strong></p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script>`<p><img><p><img>`</script>
+  </div>
+  <p>Here are the styles, unminified:</p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>
+`* {
+  background: #f3ac3c;
+  border-block: 5ch solid#282828;
+  rotate: 45deg;
+  margin: 30 190;
+  * {
+    margin: 0;
+    p {
+      margin: -80 0;
+      * {
+        padding: 40 10;
+      }
+    }
+  }
+}`
+</script>
+  </div>
+  {{/blog-post}}
+</article>

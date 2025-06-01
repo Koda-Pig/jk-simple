@@ -1,7 +1,10 @@
 <section class="intro">
   <div class="text">
-    <h1 data-text="Josh Koter">Josh Koter</h1>
-    <h2>FRONTEND ENGINEER</h2>
+    {{#if title}}
+    <h1 data-text="{{title}}">{{title}}</h1>
+    {{/if}} {{#if subtitle}}
+    <h2>{{subtitle}}</h2>
+    {{/if}}
   </div>
   <button type="button" class="point-down" id="scroll-btn">
     <span class="sr-only">scroll down</span>
