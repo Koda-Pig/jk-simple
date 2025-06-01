@@ -717,6 +717,8 @@ a.menu-item {
     @extend .project;
 
     img {
+      max-width: 100%;
+      height: auto;
       margin-block: 1rem;
     }
   }
