@@ -22,15 +22,18 @@
 
 // here we apply a view transition to the <main> element.
 // everything outside of <main> remains the same across pages.
-// this is a progressive enhancement, and is not supported in firefox at this time (02/06/2025)
+// this is a progressive enhancement, and is not supported in firefox at this time (02/06.2025)
 @view-transition {
   navigation: auto;
 }
+::view-transition-group(main) {
+  animation-duration: 0.5s;
+}
 ::view-transition-old(main) {
-  animation: scale-out 0.3s;
+  animation-name: fade-out;
 }
 ::view-transition-new(main) {
-  animation: scale-in 0.3s;
+  animation-name: fade-in;
 }
 
 :root {
@@ -105,6 +108,8 @@ body {
 }
 
 main {
+  view-transition-name: main;
+  transform-origin: top center;
   width: 100%;
   padding-inline: 16px;
 
@@ -760,15 +765,17 @@ a.menu-item {
   }
 }
 
-@keyframes scale-in {
+@keyframes fade-in {
   from {
-    scale: 0;
+    filter: blur(40px);
+    opacity: 0;
   }
 }
 
-@keyframes scale-out {
+@keyframes fade-out {
   to {
-    scale: 0;
+    filter: blur(40px);
+    opacity: 0;
   }
 }
 
