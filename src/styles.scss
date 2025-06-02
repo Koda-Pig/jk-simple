@@ -740,6 +740,10 @@ a.menu-item {
   &-post {
     @extend .project;
 
+    h3 {
+      color: var(--accent);
+    }
+
     img {
       max-width: 100%;
       height: auto;
