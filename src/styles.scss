@@ -20,6 +20,10 @@
   font-display: swap;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 :root {
   --background: #16161d;
   --foreground: #ededed;
