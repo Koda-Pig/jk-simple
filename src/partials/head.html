@@ -1,0 +1,54 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/favicon-light.ico"
+    media="(prefers-color-scheme: light)"
+  />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/favicon-dark.ico"
+    media="(prefers-color-scheme: dark)"
+  />
+  <link
+    rel="preload"
+    href="/fonts/Lexend.woff2"
+    as="font"
+    type="font/ttf"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/NotoSans-VariableFont.woff2"
+    as="font"
+    type="font/ttf"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/UnicaOne-Regular.woff2"
+    as="font"
+    type="font/ttf"
+    crossorigin
+  />
+
+  <meta
+    name="description"
+    content="Josh Koter is a frontend engineer who builds things."
+  />
+
+  {{#if title}}
+  <title>{{title}}</title>
+  {{else}}
+  <title>Josh Koter - Frontend Engineer</title>
+  {{/if}}
+  <style>
+    :where(h1) {
+      margin-block: 0.67em;
+      font-size: 2em;
+    }
+  </style>
+</head>

@@ -1,68 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon-light.ico"
-      media="(prefers-color-scheme: light)"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon-dark.ico"
-      media="(prefers-color-scheme: dark)"
-    />
-    <link
-      rel="preload"
-      href="/fonts/Lexend.woff2"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/NotoSans-VariableFont.woff2"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/UnicaOne-Regular.woff2"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
-
-    <meta
-      name="description"
-      content="Josh Koter is a frontend engineer who builds things."
-    />
-    <title>Josh Koter - Blog</title>
-    <style>
-      :where(h1) {
-        margin-block: 0.67em;
-        font-size: 2em;
-      }
-    </style>
-  </head>
+  {{> head title="Josh Koter - Blog"}}
   <body>
     <canvas class="canvas" id="bg-canvas"></canvas>
-    <button
-      type="button"
-      class="hamburger"
-      id="hamburger"
-      title="Toggle navigation menu"
-    >
-      <svg viewBox="-10 -10 120 120">
-        <path
-          d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
-        />
-      </svg>
-    </button>
     {{> header}}
     <main>
       <div class="wrapper blog" id="blog">
