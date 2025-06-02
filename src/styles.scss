@@ -283,6 +283,12 @@ button:not(:disabled) {
   @media (min-width: 1024px) {
     --heading-font-size: max(12vw, 3rem);
   }
+
+  // 1851px and up on firefox and safari broken for some reason
+  // hacky fix until I feel like fixing the root cause
+  @media (min-width: 1851px) {
+    --heading-font-size: max(11vw, 3rem);
+  }
 }
 
 .canvas {
