@@ -20,8 +20,17 @@
   font-display: swap;
 }
 
+// here we apply a view transition to the <main> element.
+// everything outside of <main> remains the same across pages.
+// this is a progressive enhancement, and is not supported in firefox at this time (02/06/2025)
 @view-transition {
   navigation: auto;
+}
+::view-transition-old(main) {
+  animation: scale-out 0.3s;
+}
+::view-transition-new(main) {
+  animation: scale-in 0.3s;
 }
 
 :root {
@@ -748,6 +757,18 @@ a.menu-item {
       border: none;
       margin-block: 0;
     }
+  }
+}
+
+@keyframes scale-in {
+  from {
+    scale: 0;
+  }
+}
+
+@keyframes scale-out {
+  to {
+    scale: 0;
   }
 }
 
