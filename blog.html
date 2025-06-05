@@ -56,46 +56,59 @@
                     selectors in nested rules, but if you do need a class,
                     rather use a single letter attribute as a selector. For
                     example, instead of this:
-                    <div class="code code-inline" lang="css">
+                    <span class="code code-inline" lang="css">
                       <!-- prettier-ignore -->
                       <script>`<p class="first">...`</script>
-                    </div>
-                    <div class="code code-inline" lang="css">
+                    </span>
+                    <span class="code code-inline" lang="css">
                       <!-- prettier-ignore -->
                       <script>`.first{...`</script>
-                    </div>
+                    </span>
                     do this:
-                    <div class="code code-inline" lang="css">
+                    <span class="code code-inline" lang="css">
                       <!-- prettier-ignore -->
                       <script>`<p f>...`</script>
-                    </div>
-                    <div class="code code-inline" lang="css">
+                    </span>
+                    <span class="code code-inline" lang="css">
                       <!-- prettier-ignore -->
                       <script>`[f]{...`</script>
-                    </div>
+                    </span>
                   </li>
                   <li>
                     Not sure how exactly this is used yet but there's a trick
                     where people use this unicode character
-                    <div class="code code-inline" lang="html">
+                    <span class="code code-inline" lang="html">
                       <!-- prettier-ignore -->
                       <script>` `</script>
-                    </div>
+                    </span>
                     in combination with some font shorthand to set the font size
                     like this
-                    <div class="code code-inline" lang="css">
+                    <span class="code code-inline" lang="css">
                       <!-- prettier-ignore -->
                       <script>`font:9in'`</script>
-                    </div>
+                    </span>
                     Which can be used to set up the size of an element without
                     using height, width, or padding.
+                  </li>
+                  <li>
+                    Instead of using the
+                    <span class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`circle`</script>
+                    </span>
+                    keyword in making a radial gradient, use the shortest length
+                    value (<span class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`1q`</script></span
+                    >). This also allows you to drop the last 0 for the last
+                    color stop in the gradient.
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
         </section>
-        {{> blogs/blog1}} {{> blogs/blog2}}
+        {{> blogs/blog1}} {{> blogs/blog2}} {{> blogs/blog3}}
       </div>
     </main>
     <script type="module" src="/src/main.ts"></script>

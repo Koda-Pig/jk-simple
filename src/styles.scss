@@ -42,6 +42,7 @@
 
   --link: var(--blue);
 
+  --rgb-foreground: 237, 237, 237;
   --rgb-background: 22, 22, 29;
 
   --spotlight-color-1: rgba(var(--rgb-blue), 0.2);
@@ -726,6 +727,9 @@ a.menu-item {
   }
   p {
     margin-bottom: 1ch;
+  }
+  em {
+    color: rgb(var(--rgb-foreground), 0.7);
   }
 
   &-intro {

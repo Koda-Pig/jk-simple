@@ -54,7 +54,7 @@ const ANIMATION_DURATION = 1000;
 const TIMEOUT = 2000;
 const LIFT_SPEED = 1;
 
-export function debounce<T extends unknown[]>(
+function debounce<T extends unknown[]>(
   fn: (...args: T) => void,
   timeout: number
 ) {
@@ -65,7 +65,7 @@ export function debounce<T extends unknown[]>(
   };
 }
 
-export function scrollBtn(element: HTMLButtonElement) {
+function scrollBtn(element: HTMLButtonElement) {
   if (!element) return;
   const scrollDown = () => {
     window.scrollTo({
@@ -95,7 +95,7 @@ export function scrollBtn(element: HTMLButtonElement) {
   element.style.animationDuration = `${ANIMATION_DURATION}ms`;
 }
 
-export function background(element: HTMLCanvasElement) {
+function background(element: HTMLCanvasElement) {
   if (!element) return;
   const canvas = element;
   const speed = 0.05;
