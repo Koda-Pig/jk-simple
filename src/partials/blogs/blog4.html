@@ -1,118 +1,77 @@
 <article>
-  {{#> blog-post title="Target (04/06/2025) - 5/10"}}
+  {{#> blog-post title="Target (05/06/2025) - 7/10"}}
   <img
-    src="/css-battle/2025-06-04.png"
-    alt="Target (31/05/2025) - 6/10"
+    src="/css-battle/2025-06-05.png"
+    alt="Target (05/06/2025) - 7/10"
     width="400"
     height="300"
   />
-  <p>Solution (111 characters):</p>
+  <p>Solution (130 characters):</p>
   <div class="code" lang="css">
     <!-- prettier-ignore -->
-    <script>`<style>*{background:radial-gradient(1q,#5A9F48 25vw,#282828 0 130px,#5A9F48)0%100%/100%762q;*{margin:60 150-190`</script>
+    <script>`<p><style>&{border-radius:9in}*{background:#394257;border:5ch solid#EED9D9;margin:60 30;*{margin:-70 40;*{height:40;margin:160-190`</script>
   </div>
   <p>
     <strong>Breakdown:</strong>
   </p>
   <p>
-    No extra markup was added in this challenge, only used the html and body
-    elements that are already on the page. My plan with this challenge was to
-    create 2 circles with the same background. The shortest way I know this can
-    be done is with a radial gradient as a background image. I'll break down
-    each part of the background rule, seeing as it's the only rule other than
-    the margin used for positioning the body element.
-  </p>
-
-  <p>
-    <strong
-      >Here is the background shorthand rule, broken up into it's parts:</strong
-    >
-  </p>
-  <div class="code" lang="css">
-    <!-- prettier-ignore -->
-    <script>
-`background-image: radial-gradient(1q, rgb(90, 159, 72) 25vw, rgb(40, 40, 40) 0px, rgb(40, 40, 40) 130px, rgb(90, 159, 72));
-background-position-x: 0%;
-background-position-y: 100%;
-background-size: 100% 762q;
-background-repeat: initial;
-background-attachment: initial;
-background-origin: initial;
-background-clip: initial;
-background-color: initial;`
-</script>
-  </div>
-
-  <p>
-    So the first part is the background image where we have a radial gradient,
-    and the first part of that is the
-    <span class="code code-inline" lang="css">
+    This was a pretty simple challenge. The idea here was 3 elements with the
+    same dark blue background and a light border. Only a
+    <span class="code code-inline" lang="html">
       <!-- prettier-ignore -->
-      <script>`1q`</script>
+      <script>`<p>`</script>
     </span>
-    . This is the
-    <a
-      href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient#ending-shape"
-      target="_blank"
-      >shape</a
-    >
-    of the gradient. Instead of putting
-    <span class="code code-inline" lang="css">
+    tag is added, giving us 3 elements total. The html element is given a border
+    radius for the rounded part of the image, and other than that there is just
+    margin for positioning and a height given to the
+    <span class="code code-inline" lang="html">
       <!-- prettier-ignore -->
-      <script>`circle`</script> </span
-    >, we can save a few characters by using the length value instead. As
-    mentioned on the MDN page linked above:
-  </p>
-
-  <p>
-    <em>
-      When the
-      <span class="code code-inline" lang="css">
-        <!-- prettier-ignore -->
-        <script>`<ending-shape>`</script>
-      </span>
-      keyword is omitted, the gradient shape is determined by the size given.
-      One
-      <span class="code code-inline" lang="css">
-        <!-- prettier-ignore -->
-        <script>`<length>`</script>
-      </span>
-      value provides a circle, while two values in
-      <span class="code code-inline" lang="css">
-        <!-- prettier-ignore -->
-        <script>`<length-percentage>`</script>
-      </span>
-      units provide an ellipse. A single
-      <span class="code code-inline" lang="css">
-        <!-- prettier-ignore -->
-        <script>`<percentage>`</script>
-      </span>
-      value is not valid.
-    </em>
-  </p>
-
-  <p>
-    Next, we have the gradient code, which uses hard stops to give a solid gray
-    circle on a green background. Then we have the position x and y which is
-    self explanatory. The last important part of this is the background size.
-    I've made this larger than the viewport height, to prevent the circle of the
-    background from being repeated. The alternative to achieving this is giving
-    it a background attachment of fixed (more characters), or setting the
-    background size to be smaller than the viewport (which won't work because it
-    cuts of the green background).
+      <script>`<p>`</script>
+    </span>
+    tag.
   </p>
 
   <p><strong>Here are the styles, unminified:</strong></p>
   <div class="code" lang="css">
     <!-- prettier-ignore -->
     <script>
-`* {
-  background: radial-gradient(1Q, #5a9f48 25vw, #282828 0 130px, #5a9f48) 0%100%/100%762q;
+`& {
+  border-radius: 9in;
+}
+* {
+  background: #394257;
+  border: 5ch solid#EED9D9;
+  margin: 60 30;
   * {
-    margin: 60 150-190;
+    margin: -70 40;
+    * {
+      height: 40;
+      margin: 160-190;
+    }
   }
 }`
 </script>
+  </div>
+
+  <div>
+    <p>
+      Looking at the top solutions for this challenge, one major difference
+      stands out to me. Take a look here:
+    </p>
+    <div class="code" lang="html">
+      <!-- prettier-ignore -->
+      <script>`<h1> <style>*{margin:160-200;background:#394257;border:solid 43q#EED8D8}&{margin:60 30;border-radius:5in;>*{margin:-70 40`</script>
+    </div>
+    <p>
+      There is no height set for the element added to the page. This saves quite
+      a few characters. The use the non breaking space unicode character which
+      gives the
+      <span class="code code-inline" lang="html">
+        <!-- prettier-ignore -->
+        <script>`<h1>`</script>
+      </span>
+      element its height.
+    </p>
   </div>
   {{/blog-post}}
 </article>
