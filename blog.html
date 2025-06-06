@@ -88,7 +88,24 @@
                       <script>`font:9in'`</script>
                     </span>
                     Which can be used to set up the size of an element without
-                    using height, width, or padding.
+                    using height, width, or padding. Not sure why, but it seems
+                    like you can't always copy/ paste this character. Here is
+                    the unicode information about this character: "U+00A0 :
+                    NO-BREAK SPACE [NBSP]". It seems like the non breaking space
+                    character gives the element it is in height. It's not a
+                    regular space, which the browser will parse and remove from
+                    the DOM if it has no siblings. Often people use this
+                    character with a
+                    <span class="code code-inline" lang="html">
+                      <!-- prettier-ignore -->
+                      <script>`<h1>`</script>
+                    </span>
+                    tag. From what I can tell, this is because that heading tag
+                    has a default font size of
+                    <span class="code code-inline" lang="css">
+                      <!-- prettier-ignore -->
+                      <script>`2em`</script> </span
+                    >, which gives it extra height.
                   </li>
                   <li>
                     Instead of using the
@@ -108,7 +125,7 @@
             </ul>
           </div>
         </section>
-        {{> blogs/blog1}} {{> blogs/blog2}} {{> blogs/blog3}}
+        {{> blogs/blog1}} {{> blogs/blog2}} {{> blogs/blog3}} {{> blogs/blog4}}
       </div>
     </main>
     <script type="module" src="/src/main.ts"></script>
