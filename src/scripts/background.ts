@@ -1,9 +1,13 @@
 const TIMEOUT = 2000;
-const LIFT_SPEED = 1;
+const SPEED = 0.05;
 
 type Input = {
   x: number;
   y: number;
+};
+
+const lerp = (start: number, end: number, speed: number) => {
+  return start + (end - start) * speed;
 };
 
 function debounce<T extends unknown[]>(
@@ -17,22 +21,31 @@ function debounce<T extends unknown[]>(
   };
 }
 
-export default function background(element: HTMLCanvasElement) {
-  if (!element) return;
-  const canvas = element;
-  const speed = 0.05;
+export default function background(
+  canvas: HTMLCanvasElement,
+  target: HTMLButtonElement
+) {
+  if (!canvas) return;
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   const ctx = canvas.getContext("2d");
   const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
   if (!ctx) return;
 
+  let targetCenterX = 0;
+  let targetCenterY = 0;
+
   let idleTimeout = setTimeout(() => {
     window.jk_data.background.isIdle = true;
   }, TIMEOUT);
 
-  const lerp = (start: number, end: number, speed: number) => {
-    return start + (end - start) * speed;
+  const setTargetCenter = () => {
+    const { x: targetX, y: targetY } = target.getBoundingClientRect();
+    const { width: targetWidth, height: targetHeight } =
+      target.getBoundingClientRect();
+
+    targetCenterX = targetX + targetWidth / 2;
+    targetCenterY = targetY + targetHeight / 2;
   };
 
   const bgDraw = ({
@@ -61,6 +74,7 @@ export default function background(element: HTMLCanvasElement) {
   const handleResize = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    setTargetCenter();
   };
 
   const getCssVar = (name: string) => {
@@ -97,6 +111,23 @@ export default function background(element: HTMLCanvasElement) {
   };
   const debouncedResize = debounce(() => handleResize(), 100);
 
+  const idleAnimation = () => {
+    if (!window.jk_data.scrollDownBtn.hasResetPosition) {
+      window.jk_data.scrollDownBtn.hasResetPosition = true;
+      setTargetCenter();
+    }
+    window.jk_data.background.targetPos.x = lerp(
+      window.jk_data.background.targetPos.x,
+      targetCenterX,
+      SPEED * 0.1
+    );
+    window.jk_data.background.targetPos.y = lerp(
+      window.jk_data.background.targetPos.y,
+      targetCenterY,
+      SPEED * 0.1
+    );
+  };
+
   retrieveColors();
 
   function animate() {
@@ -106,16 +137,15 @@ export default function background(element: HTMLCanvasElement) {
     window.jk_data.background.currentPos.x = lerp(
       window.jk_data.background.currentPos.x,
       window.jk_data.background.targetPos.x,
-      speed
+      SPEED
     );
     window.jk_data.background.currentPos.y = lerp(
       window.jk_data.background.currentPos.y,
       window.jk_data.background.targetPos.y,
-      speed
+      SPEED
     );
 
-    if (window.jk_data.background.isIdle)
-      window.jk_data.background.targetPos.y -= LIFT_SPEED;
+    if (window.jk_data.background.isIdle) idleAnimation();
 
     bgDraw({
       input: window.jk_data.background.currentPos,
