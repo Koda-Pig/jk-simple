@@ -18,13 +18,13 @@ declare global {
     jk_data: {
       scrollDownBtn: {
         shouldStopAnimating: boolean;
-        hasResetPosition: boolean;
       };
       background: {
         currentPos: Cords;
         targetPos: Cords;
-        isIdle: boolean;
         colors: string[];
+        opacity: number;
+        targetOpacity: number;
       };
       quotes: {
         currentIndex: number;
@@ -35,8 +35,7 @@ declare global {
 
 window.jk_data = {
   scrollDownBtn: {
-    shouldStopAnimating: false,
-    hasResetPosition: false
+    shouldStopAnimating: false
   },
   background: {
     currentPos: {
@@ -47,8 +46,9 @@ window.jk_data = {
       x: 0,
       y: 0
     },
-    isIdle: true,
-    colors: []
+    colors: [],
+    opacity: 1,
+    targetOpacity: 1
   },
   quotes: {
     currentIndex: 0
@@ -56,10 +56,7 @@ window.jk_data = {
 };
 
 scrollBtn(document.getElementById("scroll-btn") as HTMLButtonElement);
-background(
-  document.getElementById("bg-canvas") as HTMLCanvasElement,
-  document.getElementById("scroll-btn") as HTMLButtonElement
-);
+background(document.getElementById("bg-canvas") as HTMLCanvasElement);
 hamburger(document.getElementById("hamburger") as HTMLButtonElement);
 easterEgg(document.getElementById("pig-btn") as HTMLButtonElement);
 projects(document.getElementById("projects") as HTMLElement);

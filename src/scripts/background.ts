@@ -1,4 +1,3 @@
-const TIMEOUT = 2000;
 const SPEED = 0.05;
 
 type Input = {
@@ -21,32 +20,13 @@ function debounce<T extends unknown[]>(
   };
 }
 
-export default function background(
-  canvas: HTMLCanvasElement,
-  target: HTMLButtonElement
-) {
+export default function background(canvas: HTMLCanvasElement) {
   if (!canvas) return;
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   const ctx = canvas.getContext("2d");
   const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
   if (!ctx) return;
-
-  let targetCenterX = 0;
-  let targetCenterY = 0;
-
-  let idleTimeout = setTimeout(() => {
-    window.jk_data.background.isIdle = true;
-  }, TIMEOUT);
-
-  const setTargetCenter = () => {
-    const { x: targetX, y: targetY } = target.getBoundingClientRect();
-    const { width: targetWidth, height: targetHeight } =
-      target.getBoundingClientRect();
-
-    targetCenterX = targetX + targetWidth / 2;
-    targetCenterY = targetY + targetHeight / 2;
-  };
 
   const bgDraw = ({
     input,
@@ -65,16 +45,20 @@ export default function background(
     gradient.addColorStop(0.5, colors[2]);
     gradient.addColorStop(1, "transparent");
 
+    ctx.globalAlpha = window.jk_data.background.opacity;
     ctx.fillStyle = gradient;
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, Math.PI * 2);
     ctx.fill();
   };
 
+  const debouncedFade = debounce(() => {
+    window.jk_data.background.targetOpacity = 0;
+  }, 1000);
+
   const handleResize = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    setTargetCenter();
   };
 
   const getCssVar = (name: string) => {
@@ -91,49 +75,29 @@ export default function background(
   };
   const lightDraw = ({ x, y }: { x: number; y: number }) => {
     window.jk_data.background.targetPos = { x, y };
-    window.jk_data.background.isIdle = false;
-
-    clearTimeout(idleTimeout);
-    idleTimeout = setTimeout(() => {
-      window.jk_data.background.isIdle = true;
-    }, TIMEOUT);
+    window.jk_data.background.targetOpacity = 1;
+    debouncedFade();
   };
+
   const handleMouseMove = (event: MouseEvent) => {
     const x = event.clientX;
     const y = event.clientY;
-
     lightDraw({ x, y });
   };
+
   const handleTouchMove = (event: TouchEvent) => {
     const x = event.touches[0].clientX;
     const y = event.touches[0].clientY;
     lightDraw({ x, y });
   };
+
   const debouncedResize = debounce(() => handleResize(), 100);
-
-  const idleAnimation = () => {
-    if (!window.jk_data.scrollDownBtn.hasResetPosition) {
-      window.jk_data.scrollDownBtn.hasResetPosition = true;
-      setTargetCenter();
-    }
-    window.jk_data.background.targetPos.x = lerp(
-      window.jk_data.background.targetPos.x,
-      targetCenterX,
-      SPEED * 0.1
-    );
-    window.jk_data.background.targetPos.y = lerp(
-      window.jk_data.background.targetPos.y,
-      targetCenterY,
-      SPEED * 0.1
-    );
-  };
-
-  retrieveColors();
 
   function animate() {
     if (!ctx || !canvas) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    // lerp the position
     window.jk_data.background.currentPos.x = lerp(
       window.jk_data.background.currentPos.x,
       window.jk_data.background.targetPos.x,
@@ -145,7 +109,12 @@ export default function background(
       SPEED
     );
 
-    if (window.jk_data.background.isIdle) idleAnimation();
+    // lerp the opacity
+    window.jk_data.background.opacity = lerp(
+      window.jk_data.background.opacity,
+      window.jk_data.background.targetOpacity,
+      SPEED * 0.2
+    );
 
     bgDraw({
       input: window.jk_data.background.currentPos,
@@ -154,6 +123,8 @@ export default function background(
 
     requestAnimationFrame(animate);
   }
+
+  retrieveColors();
 
   animate();
 
