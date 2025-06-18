@@ -62,5 +62,24 @@ p {
 </script>
   </div>
 
+  <p>
+    The only real difference between my solution and the top solution is the
+    method of positioning for the p tags. My method sets the position of the
+    first one, then has a second rule for the second paragraph. Instead of this,
+    the top solution uses some clever margin positioning to circumvent the need
+    for a second rule.
+  </p>
+
+  <p>
+    Here's the code in question:
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script>`margin:40 70-100;`</script>
+    </span>
+    The interesting part about this is that the first paragraph (as ordered in
+    the DOM) appears BELOW the second paragraph. I'll be totally honest, I do
+    not understand how this works.
+  </p>
+
   {{/blog-post}}
 </article>
