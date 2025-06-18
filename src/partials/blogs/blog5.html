@@ -1,0 +1,66 @@
+<article>
+  {{#> blog-post title="Target (17/06/2025) - 7/10"}}
+  <img
+    src="/css-battle/2025-06-17.png"
+    alt="Target (17/06/2025) - 7/10"
+    width="400"
+    height="300"
+  />
+  <p>Solution (148 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script>`<p><p><style>*{padding:10;background:#F4DCBF;margin:50 45}&>*{background:#556D7F}p{color:3C342A;margin:0 70;box-shadow:-63q 0,63q 0;+*{margin-top:20`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+  <p>
+    Another pretty straightforward challenge. We have 4 elements here. HTML
+    element makes up the lighter outer background, body the inner darker
+    background, and the two p tags become the 6 rectangles. I use padding on all
+    elements, which takes the place of height for the p tags, and also prevents
+    the
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing"
+      target="_blank"
+      >margin collapsing behavior</a
+    >
+    between the body and p tags. Used box-shadow to create the darker rectangles
+    to the left and right of the p tags.
+  </p>
+
+  <p>
+    One more trick worth mentioning is the use of the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script>`color`</script>
+    </span>
+    property. I set the color on the p tags, so that I don't need to repeat it
+    for each box shadow.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>
+`* {
+  padding: 10;
+  background: #f4dcbf;
+  margin: 50 45;
+}
+& > * {
+  background: #556d7f;
+}
+p {
+  color: 3C342A;
+  margin: 0 70;
+  box-shadow: -63Q 0, 63Q 0;
+  + * {
+    margin-top: 20;
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
