@@ -19,6 +19,7 @@
               >. If I score in the top 10, I'll write about it. I'm not good at
               writing so keep the expectations nice and low.
             </p>
+
             <p>Here are some general tips:</p>
             <ul>
               <li>
@@ -36,10 +37,14 @@
                 margin: 5; instead of margin: 5px. Use percentage or q value.
                 Some examples:
                 <ul>
+                  <li>10px = 11q</li>
                   <li>20px = 5vw</li>
+                  <li>30px = 32q</li>
                   <li>40px = 5ch</li>
-                  <li>10px = 11Q</li>
                   <li>50px = 54q</li>
+                  <li>80px = 5pc</li>
+                  <li>100px = 25vw</li>
+                  <li>864px = 9in</li>
                 </ul>
               </li>
               <li>
@@ -123,10 +128,16 @@
                 </ul>
               </li>
             </ul>
+
+            <p>
+              The blog post format is the target date, and my score on the top
+              10.
+            </p>
           </div>
         </section>
-        {{> blogs/blog1}} {{> blogs/blog2}} {{> blogs/blog3}} {{> blogs/blog4}}
-        {{> blogs/blog5}}
+
+        {{> blogs/blog6}} {{> blogs/blog5}} {{> blogs/blog4}} {{> blogs/blog3}}
+        {{> blogs/blog2}} {{> blogs/blog1}}
       </div>
     </main>
     <script type="module" src="/src/main.ts"></script>

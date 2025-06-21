@@ -1,0 +1,66 @@
+<article>
+  {{#> blog-post title="Target (20/06/2025) - 4/10"}}
+  <img
+    src="/css-battle/2025-06-20.png"
+    alt="Target (20/06/2025) - 4/10"
+    width="400"
+    height="300"
+  />
+  <p>Solution (103 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script>`<style>&{color:6592CF;box-shadow:inset -5vw -5vw 0 5ch#EEB850,inset 85q 0,inset 0-30vw#fff,inset 0-45vw`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+  <p>
+    This challenge was done with only 2 properties (box-shadow and color) and 1
+    element (html). We have 4 shadows on the html element. The first shadow is
+    the orange around the border. The second shadow is the blue on the left
+    side, and the third and fourth create the blue horizontal bar in the middle.
+  </p>
+
+  <p>2 tricks in this one:</p>
+  <ul>
+    <li>
+      Because there are 2 blue shadows, we use the color property to set the
+      default box shadow color used. That way we don't have to type out the blue
+      hex twice and save a whopping 1 character.
+    </li>
+    <li>
+      Second trick is to not use the color in the target, and rather use a
+      shorter hex version (the 3 character format) to save 3 characters. The
+      color to use in this one was
+
+      <span class="code code-inline" lang="css">
+        <!-- prettier-ignore -->
+        <script>`#FEFEFF`</script> </span
+      >. I took that color to
+      <a href="https://veli.ee/hextriplets/" target="_blank">this website</a>
+      which can be used to find the closest 3 character hex for a given color,
+      and it spat out
+      <span class="code code-inline" lang="css">
+        <!-- prettier-ignore -->
+        <script>`#fff`</script> </span
+      >. This rarely works for me, as you can't get the same accuracy of color
+      most of the time, but it's a nice trick to know.
+    </li>
+  </ul>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>
+`& {
+  box-shadow:
+		inset -5vw -5vw 0 5ch #EEB850,
+		inset 85Q 0 #6592CF,
+		inset 0 -30vw #fff,
+		inset 0 -45vw #6592CF;
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
