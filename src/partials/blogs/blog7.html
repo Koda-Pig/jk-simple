@@ -1,0 +1,55 @@
+<article>
+  {{#> blog-post title="Target (23/06/2025) - tied for 2nd place"}}
+  <img
+    src="/css-battle/2025-06-23.png"
+    alt="Target (23/06/2025) - tied for 2nd place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (135 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script>`<style>&{box-shadow:0 0 0 2in#5A9F48}*{margin:70 140;border-radius:32q;*{margin:20-20}background:radial-gradient(1q,#D24444 32q,#FADE8B`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+  <p>
+    This was achieved with the html and body elements only. The green outer area
+    is achieved with a box-shadow on the html element. The red and yellow areas
+    were achieved with a radial gradient on both elements. A border radius is
+    given, then some margin for positioning. Pretty straightforward.
+  </p>
+  <p>
+    Interestingly, out of the top 10 the only solutions had either 134 or 135
+    characters. All the solutions had the exact same rules, but the players with
+    134 chars where a bit more succinct with their selectors.
+  </p>
+
+  <p>
+    The use of box-shadow may not be so intuitive this time, but the reason it
+    is used is because the background/ background color property was already in
+    use, and using outline or border instead would have prevented the overlap of
+    the body element from being visible.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>
+`& {
+  box-shadow: 0 0 0 2in#5A9F48;
+}
+* {
+  margin: 70 140;
+  border-radius: 32Q;
+  * {
+    margin: 20-20;
+  }
+  background: radial-gradient(1Q, #d24444 32Q, #fade8b);
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
