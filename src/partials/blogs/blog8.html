@@ -1,0 +1,66 @@
+<article>
+  {{#> blog-post title="Target (15/07/2025) - tied for 4th place"}}
+  <img
+    src="/css-battle/2025-07-15.png"
+    alt="Target (15/07/2025) - tied for 4th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (111 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script>`<style>&{border-block:32q solid#F5BB60;margin-left:135;background:74%/49%radial-gradient(1q,#F5BB60 5vh,#2F5A76`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+  <p>
+    This solution uses only the html element. Only 3 properties were used here.
+    The
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-block"
+      target="_blank"
+      >border block</a
+    >
+    property gives us the top and bottom yellow bars, margin-left pushes the
+    bars over to the right, and a radial gradient is set with the background
+    property.
+  </p>
+
+  <p>
+    The background property is worth exploring here. The background shorthand
+    used is equivalent to:
+  </p>
+
+  <!-- prettier-ignore -->
+  <div class="code" lang="css">
+<script>
+`background-image: radial-gradient(1q, #F5BB60 5vh, #2F5A76);
+background-position-x: 74%;
+background-position-y: center;
+background-size: 49%;`
+</script>
+  </div>
+
+  <p>
+    This sets the background image as a radial gradient. The gradient repeats
+    because the background size is less than the total area the element covers.
+    Because only the first value is set for the background position on the x
+    axis, the y value remains on the default 'center'.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>
+`& {
+  border-block: 32Q solid#F5BB60;
+  margin-left: 135;
+  background: 74%/49%radial-gradient(1Q, #f5bb60 5vh, #2f5a76);
+}
+`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
