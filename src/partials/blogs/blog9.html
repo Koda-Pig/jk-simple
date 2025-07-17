@@ -1,0 +1,70 @@
+<article>
+  {{#> blog-post title="Target (16/07/2025) - tied for 9th place"}}
+  <img
+    src="/css-battle/2025-07-16.png"
+    alt="Target (16/07/2025) - tied for 9th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (132 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script>`<style>*{background:#32295A;border-radius:8cm;margin:0 50;box-shadow:inset 0 var(--x,-5ch)0 53q#48BF7D;*{--x:-32q;zoom:.5;margin:200`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+
+  <p>
+    This solution uses the html and body elements. Both share the same styles
+    but the body element has some additional styles to adjust the position of
+    the box shadow (with the --x variable), the size (zoom) and position
+    (margin).
+  </p>
+
+  <p>
+    The
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/zoom"
+      target="_blank"
+      rel="noopener"
+      >zoom</a
+    >
+    propery is an interesting new property. It is similar to the scale property
+    (be it as
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale"
+      target="_blank"
+      >part of a transform</a
+    >
+    or
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/scale"
+      target="_blank"
+      >standalone property</a
+    >). One of the notable differences between zoom and scale is that while both
+    scale the element, zoom causes layout shift while scale does not. Also zoom
+    is 4 chars while scale is 5 so it's generally preferred to use zoom if
+    possible in code golf.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>
+`* {
+  background: #32295a;
+  border-radius: 8cm;
+  margin: 0 50;
+  box-shadow: inset 0 var(--x, -5ch) 0 53q#48BF7D;
+  * {
+    --x: -32Q;
+    zoom: 0.5;
+    margin: 200;
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
