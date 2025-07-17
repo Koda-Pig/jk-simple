@@ -3,13 +3,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link
     rel="icon"
-    type="image/svg+xml"
+    type="image/x-icon"
     href="/favicon-light.ico"
     media="(prefers-color-scheme: light)"
   />
   <link
     rel="icon"
-    type="image/svg+xml"
+    type="image/x-icon"
     href="/favicon-dark.ico"
     media="(prefers-color-scheme: dark)"
   />
@@ -17,28 +17,40 @@
     rel="preload"
     href="/fonts/Lexend.woff2"
     as="font"
-    type="font/ttf"
+    type="font/woff2"
     crossorigin
   />
   <link
     rel="preload"
     href="/fonts/NotoSans-VariableFont.woff2"
     as="font"
-    type="font/ttf"
+    type="font/woff2"
     crossorigin
   />
   <link
     rel="preload"
     href="/fonts/UnicaOne-Regular.woff2"
     as="font"
-    type="font/ttf"
+    type="font/woff2"
     crossorigin
   />
-
+  <meta name="author" content="Josh Koter" />
   <meta
     name="description"
     content="Josh Koter is a frontend engineer who builds things."
   />
+  <meta name="theme-color" content="#94a2e1" />
+  {{#if title}}
+  <meta property="og:title" content="{{title}}" />
+  {{else}}
+  <meta property="og:title" content="Josh Koter - Frontend Engineer" />
+  {{/if}}
+  <meta
+    property="og:description"
+    content="Josh Koter is a frontend engineer who builds things."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://joshkoter.com" />
 
   {{#if title}}
   <title>{{title}}</title>
