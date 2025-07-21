@@ -1,0 +1,74 @@
+<article>
+  {{#> blog-post title="Target (20/07/2025) - 10th place"}}
+  <img
+    src="/css-battle/2025-07-20.png"
+    alt="Target (20/07/2025) - 10th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (190 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script>`<p><p><img><style>&{background:#FADE8B;scale:-1;>*,p{border-radius:9in}*{background:#48BF7D;margin:85 150;p{height:40;margin:0-20;*{border-inline:15px dotted#fff;margin:38 42;padding:10 12.5`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+
+  <p>
+    Along with the html and body elements, this solution uses 2 paragraphs and
+    an image element. When additional elements are needed, I usually reach for
+    the p tag as it is only 1 character long, and has the nice feature of not
+    needing closing tags, because the browser already auto-closes paragraphs to
+    avoid rendering nested paragraphs. I use the img element along with the p
+    tags, because it is (AFAIK) the element with the least characters that still
+    renders as an inline-block.
+  </p>
+
+  <p>
+    The background element has the yellow background, the body element and the p
+    tags have the green rounded background, and the img element gives us the 2
+    round circles using the border-inline rule.
+  </p>
+
+  <p>
+    One rule here whose intention may not be clear is the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script>`scale: -1`</script> </span
+    >. Reason I added this in is because you can't position a block element (p
+    tag in this case) down on the vertical axis when it's directly inside of a
+    body tag because the margins collapse. Inverting the body element with scale
+    means that we can have that spacing at the 'top'.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>
+`& {
+  background: #fade8b;
+  scale: -1;
+  > *,
+  p {
+    border-radius: 9in;
+  }
+  * {
+    background: #48bf7d;
+    margin: 85 150;
+    p {
+      height: 40;
+      margin: 0-20;
+      * {
+        border-inline: 15px dotted#fff;
+        margin: 38 42;
+        padding: 10 12.5;
+      }
+    }
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
