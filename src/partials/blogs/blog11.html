@@ -1,0 +1,77 @@
+<article>
+  {{#> blog-post title="Target (24/07/2025) - 1st place"}}
+  <img
+    src="/css-battle/2025-07-24.png"
+    alt="Target (24/07/2025) - 1st place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (110 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script>`<p><style>*{background:#328FC1;padding:5;border-radius:0 0 9q 9q}&>*{margin:93 170;background:#3D2525}p{zoom:4`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+
+  <p>
+    Along with the html and body elements, this solution uses 1 paragraph
+    element. The universal selector sets the background, padding, and
+    border-radius of all elements to the same value. The only other rules are
+    the one setting the background and margin of the body element, and the zoom
+    on the paragraph.
+  </p>
+
+  <p>
+    Background for color, margin for positioning and border radius rules are
+    obvious enough. What I find interesting about this solution is the padding
+    and zoom. The padding property solves two purposes here:
+  </p>
+  <ol>
+    <li>Gives the paragraph some height</li>
+    <li>Gives some space around the paragraph inside the body</li>
+  </ol>
+
+  <p>
+    This is very handy because usually you can't use margin to position a block
+    element further down due to
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing"
+      target="_blank"
+      >margin collapsing</a
+    >. There are several ways around this, and padding is one of them.
+  </p>
+
+  <p>
+    The other interesting part of this solution is the
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/zoom"
+      target="_blank"
+      >zoom</a
+    >
+    property. This increases the size, and border radius of the paragraph, which
+    is exactly what we need.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>
+`* {
+  background: #328fc1;
+  padding: 5;
+  border-radius: 0 0 9Q 9Q;
+}
+& > * {
+  margin: 93 170;
+  background: #3d2525;
+}
+p {
+  zoom: 4;
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
