@@ -638,7 +638,6 @@ a.menu-item {
         path {
           stroke: rgba(var(--rgb-accent), 0.4);
           stroke-width: 50;
-          stroke-dasharray: 690000;
           stroke-dasharray: 333000 690000;
           animation: spiral cubic-bezier(0.16, 0.72, 0.88, 0.26) 40s infinite;
           animation-direction: alternate;
