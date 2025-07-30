@@ -1,0 +1,54 @@
+<article>
+  {{#> blog-post title="Target (29/07/2025) - 6th place"}}
+  <img
+    src="/css-battle/2025-07-29.png"
+    alt="Target (29/07/2025) - 6th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (179 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script>`<p><style>*{background:#D94E4E;border:32q solid#010201;margin:40%45 70;border-top:0;*{margin:-173.7 45;zoom:1.667;*{border-radius:9in;height:70;margin:-45;border:11px solid#FEFF58`</script>
+  </div>
+  <p>
+    Honestly I can't believe this actually made top 10. Was not happy with this
+    solution with all px units, decimal places, and high character count.
+  </p>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+  <p>
+    Anyway, I'll make this quick because I'm not fond of this solution. Html
+    element makes up the 'arms' (that's what they look like to me at least) with
+    the border property. Same border is applied to body element, but zoom is
+    used to increase the size of the border so that it makes up the 'body' of
+    the target. Finally the p tag takes up the task of becoming the 'head' of
+    the target with a yellow border.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script>
+`* {
+  background: #d94e4e;
+  border: 32Q solid#010201;
+  margin: 40%45 70;
+  border-top: 0;
+  * {
+    margin: -173.7 45;
+    zoom: 1.667;
+    * {
+      border-radius: 9in;
+      height: 70;
+      margin: -45;
+      border: 11px solid#FEFF58;
+    }
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
