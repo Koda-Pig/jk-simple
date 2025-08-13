@@ -4,8 +4,36 @@ const minify = (src) => {
 
   const refined = parts
     .map((part) => {
-      // If it's a script tag (odd indices after split), return as-is
-      if (part.match(/<script[\s\S]*?<\/script>/gi)) {
+      // If it's a script tag with data-no-format attribute
+      if (part.match(/<script[\s\S]*?data-no-format[\s\S]*?<\/script>/gi)) {
+        const match = part.match(/(<script[^>]*>)([\s\S]*?)(<\/script>)/i);
+        if (match) {
+          const [, openTag, content, closeTag] = match;
+
+          const lines = content.split("\n");
+
+          // Find the first non-empty line to get the base indentation
+          const firstNonEmptyLine = lines.find(
+            (line) => line.trim().length > 0
+          );
+
+          if (firstNonEmptyLine) {
+            const baseIndent = firstNonEmptyLine.match(/^[ \t]*/)[0];
+            const indentLength = baseIndent.length;
+
+            // Remove that base indentation from all lines
+            const dedentedContent = lines
+              .map((line) => {
+                if (line.startsWith(baseIndent)) {
+                  return line.slice(indentLength);
+                }
+                return line; // Keep lines with different indentation as-is
+              })
+              .join("\n");
+
+            return openTag + dedentedContent + closeTag;
+          }
+        }
         return part;
       }
       // Otherwise, apply minification
