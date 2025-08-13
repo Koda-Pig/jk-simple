@@ -22,7 +22,7 @@
 
 // here we apply a view transition to the <main> element.
 // everything outside of <main> remains the same across pages.
-// this is a progressive enhancement, and is not supported in firefox at this time (02/06.2025)
+// this is a progressive enhancement, and is not supported in firefox at this time (02/06/2025)
 @view-transition {
   navigation: auto;
 }
