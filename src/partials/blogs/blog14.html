@@ -1,0 +1,75 @@
+<article>
+  {{#> blog-post title="Target (14/08/2025) - 10th place"}}
+  <img
+    src="/css-battle/2025-08-14.png"
+    alt="Target (14/08/2025) - 10th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (145 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<style>*{border-top:5ch dotted;margin:25%120;*{margin:80 60;background:radial-gradient(1q at 50%0,#F3AC3C 5ch,#000 0 5pc,#F3AC3C)50%111%/300%109%`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+  <p>
+    OK this was a cool one. I really enjoy challenges like this - a good balance
+    of complexity, and not a problem best solved using only gradients (which
+    gets a bit boring imo). I used a dotted border to create the 3 top dots
+    (html element) and single bottom dot (body element). Used a radial gradient
+    to draw the half circle, and fill in the orange background.
+  </p>
+
+  <p>
+    I want to take a bit of a deeper look at the radial gradient in this
+    solution though, as it was revealed that there was a lot I could have done
+    to optimize this. Looking at the background shorthand code again:
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`background:radial-gradient(1q at 50%0,#F3AC3C 5ch,#000 0 5pc,#F3AC3C)50%111%/300%109%`</script>
+    </span>
+    We have here:
+  </p>
+
+  <ul>
+    <li>
+      A circular radial gradient (1q) positioned at 50% on the x-axis and 0 on
+      the y-axis. Note that this could be shortened by one character to
+      <span class="code code-inline" lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`1q at top`</script>
+      </span>
+    </li>
+    <li>
+      A gradient with 2 colors (orange and black) and hard stops at 40px (5ch)
+      and 80px (5pc).
+    </li>
+    <li>A background size of 300% on the x-axis and 109% on the y-axis.</li>
+    <li>A background position of 50% on the x-axis and 111% on the y-axis</li>
+  </ul>
+
+  <p>
+    This is a decent illustration of the sheer power of gradients in CSS. They
+    are an essential tool in any CSS Battlers toolbelt.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  border-top: 5ch dotted;
+  margin: 25%120;
+  * {
+    margin: 80 60;
+    background: radial-gradient(1Q at 50%0, #f3ac3c 5ch, #000 0 5pc, #f3ac3c)
+      50%111%/300%109%;
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
