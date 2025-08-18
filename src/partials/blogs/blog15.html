@@ -1,0 +1,63 @@
+<article>
+  {{#> blog-post title="Target (17/08/2025) - 7th place"}}
+  <img
+    src="/css-battle/2025-08-17.png"
+    alt="Target (17/08/2025) - 7th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (247 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<img><img><p><style>&{margin:22 12;background:#41434B}p{border:5vw solid#41434B;border-top-color:D95F5B;scale:2 3;margin:0 160}img{margin:40;border-radius:8cm 8cm var(--b,0);padding:50;background:radial-gradient(1q,#3210 5vh,#fff)-5vw;+*{--b:8cm 0`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+  <p>
+    BIRB. This solution uses 3 additional elements: two images and a paragraph.
+    The two images make up the eyes of the birb. img elements used here because
+    of their inline-block display value so they render next to each other. I
+    used a radial gradient for this so that I can achieve a rounded inner
+    circle, with a rounded outer circle that has one corner with a border-radius
+    of 0. This way I only need one element for each eye. To get the second eye
+    to have the sharp corner at a different position to the first, I used a
+    variable and the sibling selector. I used a p tag for the 'beak' of the
+    birb. The usual triangle trick is used here where an element is given a
+    border but no width or height, then one of the borders get a color, while
+    the rest remain transparent. To get the right shape of triangle, I used the
+    scale property. Another way to do this would be to set
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`border-width: 40 60`</script> </span
+    >, but that uses more characters.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`& {
+  margin: 22 12;
+  background: #41434b;
+}
+p {
+  border: 5vw solid#41434B;
+  border-top-color: D95F5B;
+  scale: 2 3;
+  margin: 0 160;
+}
+img {
+  margin: 40;
+  border-radius: 8cm 8cm var(--b, 0);
+  padding: 50;
+  background: radial-gradient(1Q, #3210 5vh, #fff)-5vw;
+  + * {
+    --b: 8cm 0;
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
