@@ -31,7 +31,7 @@ const minify = (src) => {
               })
               .join("\n");
 
-            return openTag + dedentedContent + closeTag;
+            return openTag + dedentedContent.trimStart() + closeTag;
           }
         }
         return part;

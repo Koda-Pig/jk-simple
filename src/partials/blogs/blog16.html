@@ -1,0 +1,101 @@
+<article>
+  {{#> blog-post title="Target (18/08/2025) - 4th place"}}
+  <img
+    src="/css-battle/2025-08-18.png"
+    alt="Target (18/08/2025) - 4th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (155 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<style>*{margin:90 60;border-top:53q solid#3B240C;*{margin:7%110;background:radial-gradient(1q at bottom,#E8AD6D 5vw,#3B240C 0 53q,#E8AD6D)-40%74q/45vw 8cm`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+
+  <p>
+    A super quick breakdown of this solution (because I want to get into the
+    gradient specifically): used
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`border-top`</script></span
+    >
+    for the two rectangles, and the gradient makes up the two half circles.
+    Margin for positioning. That's it. Now let's talk gradients.
+  </p>
+
+  <p>
+    The use of gradients in these solutions seemed like witchcraft to me for the
+    longest time, but now I understand them well enough to start giving an
+    explanation. I want to start by breaking up the background shorthand a bit,
+    which will make it easier to read. This shorthand:
+  </p>
+
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`background:radial-gradient(1q at bottom,#E8AD6D 5vw,#3B240C 0 53q,#E8AD6D)-40%74q/45vw 8cm`
+</script>
+  </div>
+  <p>is equivalent to this:</p>
+
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`background-image: radial-gradient(1q at center bottom, #E8AD6D 5vw, #3B240C 0px, #3B240C 53q, #E8AD6D);
+background-position-x: -40%;
+background-position-y: 74q;
+background-size: 45vw 8cm;`
+</script>
+  </div>
+
+  <p>
+    That makes things clearer. We can see that the image, position, and size are
+    all set in this shorthand. Typically, gradients have smooth transitions
+    between colors, but in this case we need hard stops. To achieve this, we
+    need to define the start and end positions of the colors, with each colors
+    start position being the same as the previous colors end position. Example:
+  </p>
+
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`background-image: radial-gradient(red 10px, green 10px 20px);`
+</script>
+  </div>
+
+  <p>
+    Lucky for us, there's a shorter way to do this. Instead of putting the
+    previous colors value, we can just add a 0. Example:
+  </p>
+
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`background-image: radial-gradient(red 10px, green 0);`
+</script>
+  </div>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>`* {
+  margin: 90 60;
+  border-top: 53Q solid#3B240C;
+  * {
+    margin: 7%110;
+    background: radial-gradient(
+        1Q at bottom,
+        #e8ad6d 5vw,
+        #3b240c 0 53Q,
+        #e8ad6d
+      )-40%74q/45vw 8cm;
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
