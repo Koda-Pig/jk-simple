@@ -1,0 +1,69 @@
+<article>
+  {{#> blog-post title="Target (25/08/2025) - 3rd place"}}
+  <img
+    src="/css-battle/2025-08-25.png"
+    alt="Target (25/08/2025) - 3rd place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (162 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<img><img><style>*{background:#3A335A;margin:0 65 135;*{color:fff;box-shadow:0 65px,0 45vh,0 217q;*{margin:5-545-5 135;padding:15 70;rotate:-15deg;+*{rotate:15deg`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+
+  <p>
+    The HTML element doesn't do much in this solution (other than have some
+    margin applied to it), the heavy lifting is done by the body element and two
+    image elements. The box shadow property is used to create the 3 horizontal
+    bars on each section. Padding is used for the img elements to set their
+    size, margin for positioning and then rotate for obvious reasons.
+  </p>
+
+  <p>
+    There is one interesting trick used in this solution that I've learned to do
+    recently: using a single margin property to position two elements. My old
+    method of positioning two elements with margin would be:
+  </p>
+
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>`img { margin: 20 50; + * { margin: 35 100 } }`</script>
+  </div>
+
+  <p>
+    That method sets the margin on img elements, then uses the adjacent sibling
+    selector to target its next sibling and apply different margin there. The
+    new method uses a single margin property, with a very high negative value,
+    to position both images exactly where they need to be. This results in the
+    element that appears first in the DOM, appearing to render last visually.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  background: #3a335a;
+  margin: 0 65 135;
+  * {
+    color: fff;
+    box-shadow: 0 65px, 0 45vh, 0 217Q;
+    * {
+      margin: 5-545-5 135;
+      padding: 15 70;
+      rotate: -15deg;
+      + * {
+        rotate: 15deg;
+      }
+    }
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
