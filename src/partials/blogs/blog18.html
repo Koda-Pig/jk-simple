@@ -1,0 +1,55 @@
+<article>
+  {{#> blog-post title="Target (05/09/2025) - 7th place"}}
+  <img
+    src="/css-battle/2025-09-05.png"
+    alt="Target (05/09/2025) - 7th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (165 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<dt><p><style>*{background:var(--b,#CA8E75);padding:30;+*,p{--b:#FEFF58}*{rotate:15deg;margin:20 60;*{--b:#414B81;rotate:-30deg;margin:10-90;scale:1-1;*{margin:0 100`</script>
+  </div>
+  <p>
+    <strong>Breakdown:</strong>
+  </p>
+
+  <p>
+    Nothing super fancy in this solution. Just generally trying to be as terse
+    as possible. body and p elements are the yellow boxes, and the dt element is
+    the blue box. One non-intuitive rule here is the scale, which was a shorter
+    way for me to get the boxes in the correct orientation of rotation, without
+    using the rotation rule again.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  background: var(--b, #ca8e75);
+  padding: 30;
+  + *,
+  p {
+    --b: #feff58;
+  }
+  * {
+    rotate: 15deg;
+    margin: 20 60;
+    * {
+      --b: #414b81;
+      rotate: -30deg;
+      margin: 10-90;
+      scale: 1-1;
+      * {
+        margin: 0 100;
+      }
+    }
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
