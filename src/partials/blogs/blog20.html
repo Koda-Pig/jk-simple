@@ -1,0 +1,83 @@
+<article>
+  {{#> blog-post title="Target (10/09/2025) - tied for 2nd place"}}
+  <img
+    src="/css-battle/2025-09-10.png"
+    alt="Target (10/09/2025) - tied for 2nd place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (157 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<dt><p><img><style>dt,img{rotate:45deg;margin:20 62}*+*{clip-path:inset(5pc 0);background:#14C5;*{border:32q solid#3E5AA9;p{margin:10;*{scale:.34 3;margin:30`</script>
+  </div>
+
+  <p>
+    Alrighty, this was an interesting challenge. Couldn't make as much use of
+    the html and body elements for this one, as I needed to use
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`clip-path`</script>
+    </span>
+    on the body element and that would clip the background color.
+  </p>
+
+  <p>Two tricks worth noting here:</p>
+
+  <ol>
+    <li>
+      Using #14C5 instead of #B0C1F0 for the background color. This works
+      because the shorter hex code has transparency, and the color produced by
+      using this is a combination of the default white background and this color
+      sitting on top of it. I used
+      <a href="https://48dvyq.csb.app/" target="_blank"
+        >this color mixing tool</a
+      >
+      to determine what the closest matching short hex code would be to the
+      longer one.
+    </li>
+    <li>
+      Using
+      <span class="code code-inline" lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`scale:.34 3`</script>
+      </span>
+      to size the
+      <span class="code code-inline" lang="html">
+        <!-- prettier-ignore -->
+        <script data-no-format>`<img>`</script>
+      </span>
+      element, instead of padding, width or height. This worked nicely because
+      all the children of the body element have a border, and the desired size
+      can be achieved by scaling the original 30px border.
+    </li>
+  </ol>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`dt,
+img {
+  rotate: 45deg;
+  margin: 20 62;
+}
+* + * {
+  clip-path: inset(5pc 0);
+  background: #14c5;
+  * {
+    border: 32Q solid#3E5AA9;
+    p {
+      margin: 10;
+      * {
+        scale: 0.34 3;
+        margin: 30;
+      }
+    }
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
