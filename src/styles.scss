@@ -1,25 +1,3 @@
-@font-face {
-  font-family: "Host Grotesk";
-  src: url("/fonts/HostGrotesk.woff2") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Lexend";
-  src: url("/fonts/Lexend.woff2") format("truetype");
-  font-display: swap;
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Noto Sans";
-  src: url("/fonts/NotoSans-VariableFont.woff2") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Unica One";
-  src: url("/fonts/UnicaOne-Regular.woff2") format("truetype");
-  font-display: swap;
-}
-
 // here we apply a view transition to the <main> element.
 // everything outside of <main> remains the same across pages.
 // this is a progressive enhancement, and is not supported in firefox at this time (02/06/2025)
