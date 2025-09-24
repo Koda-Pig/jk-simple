@@ -205,7 +205,7 @@ button:not(:disabled) {
         inset: 0;
         color: var(--accent);
         animation: wave 30s linear infinite;
-        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='wave' x='0' y='1' width='100%25' height='110%25' patternUnits='userSpaceOnUse'%3E%3Cpath id='wavePath' d='M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z' fill='%23fff' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='20' fill='url(%23wave)' /%3E%3C/svg%3E%0A");
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='wave' x='0' y='1' width='100%25' height='110%25' patternUnits='userSpaceOnUse'%3E%3Cpath d='M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z' fill='%23fff' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='20' fill='url(%23wave)' /%3E%3C/svg%3E%0A");
         mask-size: 200%;
         mask-position: 0%;
       }
