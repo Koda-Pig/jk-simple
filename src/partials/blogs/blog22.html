@@ -1,0 +1,70 @@
+<article>
+  {{#> blog-post title="Target (25/09/2025) - tied for 7th place"}}
+  <img
+    src="/css-battle/2025-09-25.png"
+    alt="Target (25/09/2025) - tied for 7th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (205 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<dt><style>&{background:#3E5AA9;margin:110 160;box-shadow:0 0 0 63q#FAE29E,0 0 0 8cm#B0C1F0;>*{margin:-40}*{border-radius:8cm;height:160;scale:-1;background:conic-gradient(at 35vh 74q,#3E5AA9 37.5%,#0000 0`</script>
+  </div>
+
+  <p>
+    Starting to lose interest in this pursuit. For now I'll trod on. This
+    solution uses the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`background`</script>
+    </span>
+    and
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`box-shadow`</script>
+    </span>
+    properties on the html element to get the blue/ yellow/ lavendar squares.
+    What I like about this solution is the exact same styles are applied to the
+    body and p elements, except for the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`margin`</script>
+    </span>
+    property targetting the body element. The body and p tags create the kind of
+    pie slice cutout shapes, using a
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`conic-gradient`</script>
+    </span>
+    and they are flipped using the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`scale`</script>
+    </span>
+    property.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`& {
+  background: #3e5aa9;
+  margin: 110 160;
+  box-shadow: 0 0 0 63q#FAE29E, 0 0 0 8cm#B0C1F0;
+  > * {
+    margin: -40;
+  }
+  * {
+    border-radius: 8cm;
+    height: 160;
+    scale: -1;
+    background: conic-gradient(at 35vh 74Q, #3e5aa9 37.5%, #0000 0);
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
