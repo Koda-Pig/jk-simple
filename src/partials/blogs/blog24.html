@@ -1,0 +1,54 @@
+<article>
+  {{#> blog-post title="Target (12/10/2025) - 4th place"}}
+  <img
+    src="/css-battle/2025-10-12.png"
+    alt="Target (12/10/2025) - 4th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (107 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<style>*{background:#4763B1}&{*{margin:39;rotate:45deg}margin:91 141;border-image:69/42%conic-gradient(#fff`</script>
+  </div>
+
+  <p>
+    I was pretty happy with this solution. Really thought I had gotten it as
+    short as possible, before I saw the top scorers. The border-image property
+    was used to make up the four white squares, and the body makes up the center
+    blue shape overlaying the four white squares.
+  </p>
+
+  <p>
+    I missed something obvious with this challenge though, instead of using a
+    second element to create the blue shape in the middle, it's actually
+    possible to create that shape using only the border image property. I used a
+    conic gradient with a solid white color, but if a radial gradient is used
+    instead, the entire image can be created like this:
+  </p>
+
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<body bgcolor=4763B style=margin:91+141;border-image:60/42%radial-gradient(#0000+8q,#FFF+0>`</script>
+  </div>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  background: #4763b1;
+}
+& {
+  * {
+    margin: 39;
+    rotate: 45deg;
+  }
+  margin: 91 141;
+  border-image: 69/42%conic-gradient(#fff);
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
