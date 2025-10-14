@@ -1,0 +1,48 @@
+<article>
+  {{#> blog-post title="Target (13/10/2025) - 4th place"}}
+  <img
+    src="/css-battle/2025-10-13.png"
+    alt="Target (13/10/2025) - 4th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (160 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<img><style>*{background:#4A9A86;border:32q solid#FAE29E}&{border-width:0 40;margin:30 100;*{border-radius:3cm;margin:20-80 83%80;*{margin:50-190-120;padding:30`</script>
+  </div>
+
+  <p>
+    Eh, again nothing new that I'm excited to discuss in this solution. Quick
+    breakdown: html, body and img elements all get the same background and
+    border. Html element gets a border width of 0 40 to remove the top and
+    bottom borders. body and img elements get a border radius of 3cm (could be
+    any high value but I like using cm) to create the circles. Padding to give
+    the img element its size and margin to position everything.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  background: #4a9a86;
+  border: 32Q solid#FAE29E;
+}
+& {
+  border-width: 0 40;
+  margin: 30 100;
+  * {
+    border-radius: 3cm;
+    margin: 20-80 83%80;
+    * {
+      margin: 50-190-120;
+      padding: 30;
+    }
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
