@@ -1,0 +1,177 @@
+<article>
+  {{#> blog-post title="Target (27/10/2025) - 3rd place"}}
+  <img
+    src="/css-battle/2025-10-27.png"
+    alt="Target (27/10/2025) - 3rd place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (118 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<style>*{background:radial-gradient(1q at bottom,#C1A162 9.5ex,#7C3219 0 50vh,#FE22)0-55vh;margin:95 25 20;*{font:3cm'`</script>
+  </div>
+
+  <p>
+    Alright this is a good opportunity to explain the trick where a CSS unit
+    that is affected by font size is used, so that value can be changed by
+    changing the font size. Note the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`9.5ex`</script>
+    </span>
+    value used in the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`radial-gradient`</script></span
+    >. All you need to know for these purposes is that the
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#ex"
+      target="_blank"
+      title="MDN documentation for the EX unit"
+      >x-height (ex)</a
+    >
+    unit is affected by
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`font-size`</script></span
+    >. I picked this unit over the other units that would also be affected by
+    font size (em, rem, ch, etc.), because it's had the shortest amount of
+    characters to get to the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`70px`</script></span
+    >goal. Now, the gradient is applied to both the
+
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`html`</script></span
+    >
+    and
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`body`</script></span
+    >
+    elements. I've written about using this method before so I'm not going to
+    explain everything about it again. If you want to know more, you can read
+    about it
+    <a href="#2025-06-04">here</a>. What I want to explain is how the gradient
+    creates the circles on the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`html`</script></span
+    >
+    element, but is a solid single color on the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`body`</script></span
+    >
+    element. Essentially changing the font size of the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`body`</script></span
+    >
+    element changes the position of a certain color stop in the gradient. I
+    change the
+
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`font-size`</script></span
+    >
+    property to 3cm, which is a value large enough to make the color stop take
+    up the entire available space. You can think of it like this:
+  </p>
+
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  background: radial-gradient(
+      1Q at bottom,
+      #c1a162 var(--gradient-stop-1, 70px),
+      #7c3219 0 50vh,
+      #fe22
+    )
+    0-55vh;
+  margin: 95 25 20;
+  body {
+    --gradient-stop-1: 113.4px;
+  }
+}`
+</script>
+  </div>
+
+  <p>
+    Hope that was a decent enough explanation of the gradient trick. In a
+    nutshell, we're using the
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`font-size`</script></span
+    >
+    property to change the position of a color stop in a gradient. If you have
+    any questions, feel free to <a href="/#contact">ask me about it</a>. Two
+    other small tricks I'll mention:
+  </p>
+
+  <ol>
+    <li>
+      Moving the margin from the
+      <span class="code code-inline" lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`body`</script></span
+      >
+      element to the universal selector, as a margin shared is a margin halved.
+      Instead of setting the margin to
+      <span class="code code-inline" lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`190 50 40`</script></span
+      >
+      on the body element, we set the margin to
+      <span class="code code-inline" lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`95 25 20`</script></span
+      >
+      on the universal selector. This saves us a character and results in the
+      same final position of the
+
+      <span class="code code-inline" lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`body`</script></span
+      >
+      element.
+    </li>
+
+    <li>
+      Changing one of the colors from its 6 digit hex code to a 4 digit one that
+      results in the same color, by blending the default background of white and
+      the 4 digit hex code that is lower opacity. This saves 2 characters and
+      results in the same final color. I used
+      <a href="https://48dvyq.csb.app/" target="_blank"
+        >this color mixing tool</a
+      >
+      to find the 4 digit hex code.
+    </li>
+  </ol>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  background: radial-gradient(
+      1Q at bottom,
+      #c1a162 9.5ex,
+      #7c3219 0 50vh,
+      #fe22
+    )
+    0-55vh;
+  margin: 95 25 20;
+  * {
+    font: 3cm "";
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>

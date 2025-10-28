@@ -1,6 +1,6 @@
 <section class="blog" id="blog">
-  <div class="blog-post">
-    <h3>{{#if title}} {{title}} {{/if}}</h3>
+  <div class="blog-post" id="{{dateAnchor title}}">
+    <h3><a href="#{{dateAnchor title}}">{{#if title}} {{title}} {{/if}}</a></h3>
     {{> @partial-block}}
   </div>
 </section>
