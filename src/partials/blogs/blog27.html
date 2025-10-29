@@ -34,7 +34,7 @@
       <!-- prettier-ignore -->
       <script data-no-format>`border-radius`</script></span
     >
-    , and
+    and
     <span class="code code-inline" lang="css">
       <!-- prettier-ignore -->
       <script data-no-format>`box-shadow`</script></span
@@ -48,18 +48,17 @@
   </p>
 
   <p>
-    I added a full stop to the markup before the
+    I added a full stop (period) to the markup before the
     <span class="code code-inline" lang="html">
       <!-- prettier-ignore -->
       <script data-no-format>`<div>`</script>
     </span>
-    element, as this positioned the
-
+    element, which positioned the
     <span class="code code-inline" lang="html">
       <!-- prettier-ignore -->
       <script data-no-format>`<div>`</script>
     </span>
-    further down, without having to use
+    further down without having to use
     <span class="code code-inline" lang="css">
       <!-- prettier-ignore -->
       <script data-no-format>`margin`</script></span
@@ -68,9 +67,8 @@
       <!-- prettier-ignore -->
       <script data-no-format>`<div>`</script>
     </span>
-    instead of a paragraph tag because it's the element with the lowest number
-    of characters (3) that is a block-level element by default and has no
-    default margin.
+    instead of a paragraph tag because it's the block-level element with the
+    lowest character count (3) and no default margin.
   </p>
 
   <p>
@@ -83,7 +81,8 @@
     <span class="code code-inline" lang="html">
       <!-- prettier-ignore -->
       <script data-no-format>`<body>`</script></span
-    >, and
+    >
+    and
     <span class="code code-inline" lang="css">
       <!-- prettier-ignore -->
       <script data-no-format>`scale`</script>
@@ -92,13 +91,17 @@
     <span class="code code-inline" lang="html">
       <!-- prettier-ignore -->
       <script data-no-format>`<div>`</script></span
-    >. This was a much shorter way to essentially change the size of the shadows
-    spread radius.
+    >. This was a much shorter way to essentially change the shadow's spread
+    radius. Note:
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`zoom`</script></span
+    >
+    is non-standard but widely supported and totally fine in code-golf contexts.
   </p>
 
   <p>
-    One thing to note that I have not discussed here before is that while the
-    very large
+    One thing to note that I haven't discussed here before: while the very large
     <span class="code code-inline" lang="css">
       <!-- prettier-ignore -->
       <script data-no-format>`border-radius`</script>
@@ -108,9 +111,8 @@
       <!-- prettier-ignore -->
       <script data-no-format>`<body>`</script>
     </span>
-    element has an apparent radius. If an element has zero width and height it
-    will not have any corners to round because the element itself doesn't occupy
-    any space.
+    element has an apparent radius. If an element has zero width and height, it
+    won't have any corners to round because it doesn't occupy any space.
   </p>
 
   <p><strong>Here are the styles, unminified:</strong></p>
