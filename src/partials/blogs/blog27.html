@@ -1,0 +1,139 @@
+<article>
+  {{#> blog-post title="Target (28/10/2025) - 4th place"}}
+  <img
+    src="/css-battle/2025-10-28.png"
+    alt="Target (28/10/2025) - 4th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (138 characters):</p>
+  <div class="code" lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`.<div><style>*{box-shadow:0 0 0 5ch#F4DA64;background:#C06C88;border-radius:3cm}&{margin:150 110;>*{margin:-31 49;zoom:1.12;*{scale:16%1.1`</script>
+  </div>
+
+  <p>
+    I'd be lying if I said I was excited about this target, but I'll do a quick
+    breakdown anyway. The idea with this solution is for the three elements
+    (<span class="code code-inline" lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<html>`</script></span
+    >,<span class="code code-inline" lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<body>`</script></span
+    >, and
+    <span class="code code-inline" lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<div>`</script></span
+    >) to all have the same
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`background-color`</script></span
+    >,
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`border-radius`</script></span
+    >
+    , and
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`box-shadow`</script></span
+    >
+    applied. The shadow has no offset or blur, just a spread radius. This has a
+    very similar effect to giving the element an outline or border, but the
+    issue with an outline or border is that it has a different stacking context
+    than a shadow, causing the outline or border of a parent element to overlap
+    the background of a child element. This behavior made outline or border
+    unsuitable for this solution.
+  </p>
+
+  <p>
+    I added a full stop to the markup before the
+    <span class="code code-inline" lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<div>`</script>
+    </span>
+    element, as this positioned the
+
+    <span class="code code-inline" lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<div>`</script>
+    </span>
+    further down, without having to use
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`margin`</script></span
+    >. I used a
+    <span class="code code-inline" lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<div>`</script>
+    </span>
+    instead of a paragraph tag because it's the element with the lowest number
+    of characters (3) that is a block-level element by default and has no
+    default margin.
+  </p>
+
+  <p>
+    I used
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`zoom`</script>
+    </span>
+    to change the size of the shadow on the
+    <span class="code code-inline" lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<body>`</script></span
+    >, and
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`scale`</script>
+    </span>
+    to change the size of the
+    <span class="code code-inline" lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<div>`</script></span
+    >. This was a much shorter way to essentially change the size of the shadows
+    spread radius.
+  </p>
+
+  <p>
+    One thing to note that I have not discussed here before is that while the
+    very large
+    <span class="code code-inline" lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`border-radius`</script>
+    </span>
+    is applied to all elements, only the
+    <span class="code code-inline" lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<body>`</script>
+    </span>
+    element has an apparent radius. If an element has zero width and height it
+    will not have any corners to round because the element itself doesn't occupy
+    any space.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  box-shadow: 0 0 0 5ch#F4DA64;
+  background: #c06c88;
+  border-radius: 3cm;
+}
+& {
+  margin: 150 110;
+  > * {
+    margin: -31 49;
+    zoom: 1.12;
+    * {
+      scale: 16%1.1;
+    }
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
