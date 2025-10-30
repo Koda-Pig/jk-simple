@@ -1,0 +1,79 @@
+<article>
+  {{#> blog-post title="Target (29/10/2025) - tied for 6th place"}}
+  <img
+    src="/css-battle/2025-10-29.png"
+    alt="Target (29/10/2025) - tied for 6th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (107 characters):</p>
+  <div class="code" data-lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<style>*{*{margin:100;--x:3/35%5pc;background:#4443}border-image:conic-gradient(#4763B1)var(--x,420/40%180q`</script>
+  </div>
+
+  <p>
+    Succinct, and pretty fun. Using the
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`border-image`</script>
+    </span>
+    shorthand here gives us the four blue squares on the
+    <span class="code code-inline" data-lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`html`</script>
+    </span>
+    element, and then a variable (
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`--x`</script> </span
+    >) is used to change the
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`border-image-slice`</script>
+    </span>
+    and
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`border-image-width`</script>
+    </span>
+    values on the
+    <span class="code code-inline" data-lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`body`</script>
+    </span>
+    element, changing it to essentially a solid border. Here's a quick breakdown
+    of what that shorthand does:
+  </p>
+  <div class="code" data-lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`border-image-outset: 0;
+border-image-repeat: stretch;
+border-image-slice: 420;
+border-image-source: conic-gradient(rgb(71, 99, 177));
+border-image-width: 40% 170.079px;`
+</script>
+  </div>
+  <p>
+    Finally the usual margin for positioning, and a shortened hex code for the
+    background color.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" data-lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  * {
+    margin: 100;
+    --x: 3/35%5pc;
+    background: #4443;
+  }
+  border-image: conic-gradient(#4763b1) var(--x, 420/40%180q);
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>

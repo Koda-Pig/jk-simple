@@ -73,20 +73,20 @@
                     selectors in nested rules, but if you do need a class,
                     rather use a single letter attribute as a selector. For
                     example, instead of this:
-                    <span class="code code-inline" lang="css">
+                    <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
                       <script data-no-format>`<p class="first">...`</script>
                     </span>
-                    <span class="code code-inline" lang="css">
+                    <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
                       <script data-no-format>`.first{...`</script>
                     </span>
                     do this:
-                    <span class="code code-inline" lang="css">
+                    <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
                       <script data-no-format>`<p f>...`</script>
                     </span>
-                    <span class="code code-inline" lang="css">
+                    <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
                       <script data-no-format>`[f]{...`</script>
                     </span>
@@ -94,13 +94,13 @@
                   <li>
                     Not sure how exactly this is used yet but there's a trick
                     where people use this unicode character
-                    <span class="code code-inline" lang="html">
+                    <span class="code code-inline" data-lang="html">
                       <!-- prettier-ignore -->
                       <script data-no-format>` `</script>
                     </span>
                     in combination with some font shorthand to set the font size
                     like this
-                    <span class="code code-inline" lang="css">
+                    <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
                       <script data-no-format>`font:9in'`</script>
                     </span>
@@ -113,25 +113,25 @@
                     regular space, which the browser will parse and remove from
                     the DOM if it has no siblings. Often people use this
                     character with a
-                    <span class="code code-inline" lang="html">
+                    <span class="code code-inline" data-lang="html">
                       <!-- prettier-ignore -->
                       <script data-no-format>`<h1>`</script>
                     </span>
                     tag. From what I can tell, this is because that heading tag
                     has a default font size of
-                    <span class="code code-inline" lang="css">
+                    <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
                       <script data-no-format>`2em`</script> </span
                     >, which gives it extra height.
                   </li>
                   <li>
                     Instead of using the
-                    <span class="code code-inline" lang="css">
+                    <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
                       <script data-no-format>`circle`</script>
                     </span>
                     keyword in making a radial gradient, use the shortest length
-                    value (<span class="code code-inline" lang="css">
+                    value (<span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
                       <script data-no-format>`1q`</script></span
                     >). This also allows you to drop the last 0 for the last
@@ -149,6 +149,7 @@
         </section>
         <!-- prettier-ignore -->
         <div>
+{{> blogs/blog28}}
 {{> blogs/blog27}}
 {{> blogs/blog26}}
 {{> blogs/blog25}}

@@ -7,7 +7,7 @@
     height="300"
   />
   <p>Solution (145 characters):</p>
-  <div class="code" lang="html">
+  <div class="code" data-lang="html">
     <!-- prettier-ignore -->
     <script data-no-format>`<style>*{border-top:5ch dotted;margin:25%120;*{margin:80 60;background:radial-gradient(1q at 50%0,#F3AC3C 5ch,#000 0 5pc,#F3AC3C)50%111%/300%109%`</script>
   </div>
@@ -26,7 +26,7 @@
     I want to take a bit of a deeper look at the radial gradient in this
     solution though, as it was revealed that there was a lot I could have done
     to optimize this. Looking at the background shorthand code again:
-    <span class="code code-inline" lang="css">
+    <span class="code code-inline" data-lang="css">
       <!-- prettier-ignore -->
       <script data-no-format>`background:radial-gradient(1q at 50%0,#F3AC3C 5ch,#000 0 5pc,#F3AC3C)50%111%/300%109%`</script>
     </span>
@@ -37,7 +37,7 @@
     <li>
       A circular radial gradient (1q) positioned at 50% on the x-axis and 0 on
       the y-axis. Note that this could be shortened by one character to
-      <span class="code code-inline" lang="css">
+      <span class="code code-inline" data-lang="css">
         <!-- prettier-ignore -->
         <script data-no-format>`1q at top`</script>
       </span>
@@ -56,7 +56,7 @@
   </p>
 
   <p><strong>Here are the styles, unminified:</strong></p>
-  <div class="code" lang="css">
+  <div class="code" data-lang="css">
     <!-- prettier-ignore -->
     <script data-no-format>
 `* {
