@@ -1,0 +1,59 @@
+<article>
+  {{#> blog-post title="Target (13/11/2025) - tied for 1st place"}}
+  <img
+    src="/css-battle/2025-11-13.png"
+    alt="Target (13/11/2025) - tied for 1st place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (147 characters):</p>
+  <div class="code" data-lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>` <style>*{color:9F6766;margin:46%198 4%102;box-shadow:5ch 0,0 72q,32mm 37q 0-37q,32mm -37q 0-37q;scale:-1;*{margin:168 96-168-96;background:#BDE4C1`</script>
+  </div>
+
+  <p>
+    This one was pretty straightforward, just the
+    <span class="code code-inline" data-lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<html>`</script>
+    </span>
+    and
+    <span class="code code-inline" data-lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`<body>`</script>
+    </span>
+    elements. The idea with this solution is to have both elements have the same
+    appearance, using the same styles, but one of the elements is inverted on
+    the x and y axis with
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`scale: -1`</script>
+    </span>
+    so that its shadows are in the opposite direction. Something new I used in
+    this solution that I have not before is the negative spread radius of the
+    shadow. I only learned about 2 months ago that you could even have a
+    negative spread radius on a shadow. This was the first time this trick was
+    useful for me, because it could be used to create the four small squares in
+    the top right and bottom left corners.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" data-lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  color: 9F6766;
+  margin: 46%198 4%102;
+  box-shadow: 5ch 0, 0 72Q, 32mm 37Q 0-37Q, 32mm -37Q 0-37Q;
+  scale: -1;
+  * {
+    margin: 168 96-168-96;
+    background: #bde4c1;
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
