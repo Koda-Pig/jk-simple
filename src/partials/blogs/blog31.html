@@ -1,0 +1,56 @@
+<article>
+  {{#> blog-post title="Target (18/11/2025) - tied for 4th place"}}
+  <img
+    src="/css-battle/2025-11-18.png"
+    alt="Target (18/11/2025) - tied for 4th place"
+    width="400"
+    height="300"
+  />
+  <p>Solution (110 characters):</p>
+  <div class="code" data-lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<style>*{background:#555FD9;margin:40-30;outline-offset:-32q;outline:5vw solid#F2A842;*{margin:0 175;scale:2 1`</script>
+  </div>
+
+  <p>
+    This was a fun one, it's unusual that
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`outline-offset`</script>
+    </span>
+    is found in one of the top 10 solutions. These challenges aren't as fun to
+    me when the same few properties and tricks are used over and over. I used
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline-offset"
+      target="_blank"
+      >outline-offset</a
+    >
+    here with a negative value to create some space around the body element (the
+    rectangle at the forefront), allowing the blue background to overlap the
+    outline of the
+    <span class="code code-inline" data-lang="html">
+      <!-- prettier-ignore -->
+      <script data-no-format>`html`</script>
+    </span>
+    element.
+  </p>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" data-lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  background: #555fd9;
+  margin: 40-30;
+  outline-offset: -32Q;
+  outline: 5vw solid#F2A842;
+  * {
+    margin: 0 175;
+    scale: 2 1;
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
