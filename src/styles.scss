@@ -557,6 +557,7 @@ a.menu-item {
       position: relative;
       width: 100%;
       background: #000;
+      overflow: clip;
 
       &.tetrus {
         iframe {
