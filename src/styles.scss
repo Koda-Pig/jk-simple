@@ -557,6 +557,12 @@ a.menu-item {
       position: relative;
       width: 100%;
       background: #000;
+
+      &.tetrus {
+        iframe {
+          pointer-events: none;
+        }
+      }
     }
 
     iframe,

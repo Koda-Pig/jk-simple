@@ -1,5 +1,32 @@
 <section class="projects" id="projects">
   <div class="project">
+    <h3 id="tetrus">
+      <a href="https://tetra-face.fly.dev/" target="_blank" rel="noopener">
+        Tetrus
+      </a>
+    </h3>
+    <p>
+      Multiplayer Tetris with live chat. This Next.js project uses Socket.io for
+      real-time gameplay and NextAuth for authentication. Visit
+      <a href="https://tetra-face.fly.dev/" target="_blank" rel="noopener">
+        Tetrus</a
+      >
+      to play.
+    </p>
+    <div class="projectWrapper tetrus" title="Visit the website to play">
+      {{>loader}}
+      <iframe
+        class="loading"
+        width="500"
+        height="500"
+        data-src="https://tetra-face.fly.dev/"
+        title="Tetrus"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  <div class="project">
     <h3 id="lisa-website">
       <a href="https://lisapottery.co.za/" target="_blank" rel="noopener">
         Lisa's website
@@ -129,7 +156,7 @@
   <div class="project">
     <h3 id="weather-app">
       <a
-        href="https://weatherapp.joshkoter.com/"
+        href="https://weather-vueing.netlify.app/"
         target="_blank"
         rel="noopener"
       >
@@ -137,6 +164,10 @@
       </a>
     </h3>
     <p>
+      A simple weather app built using the Vue.js. Weather data comes from
+      <a href="https://openweathermap.org/" target="_blank">openweathermap</a>
+      and location prediction data comes from
+      <a href="https://www.geoapify.com/" target="_blank">geoapify</a>
       A weather app that uses the Geolocation API. Type a city name and hit
       <b>Enter</b> to see it in action, or simply use the 'Get Device Location'
       button - you'll have to allow location access when you're prompted for
@@ -148,8 +179,8 @@
         class="loading"
         width="500"
         height="500"
-        data-src="https://weatherapp.joshkoter.com/"
-        title="Lisa's website"
+        data-src="https://weather-vueing.netlify.app/"
+        title="Weather App"
         loading="lazy"
         allow="geolocation"
       ></iframe>
