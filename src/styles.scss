@@ -356,41 +356,36 @@ button:not(:disabled) {
   }
 }
 
-.pig {
-  margin-block: auto 32px;
+.logo {
   display: block;
-  margin-inline: auto;
-  max-width: 175px;
+  margin: auto auto 0;
   background-color: #0000;
   border: none;
+  max-width: 180px;
   transition-property: filter, opacity;
   transition-duration: var(--transition-longest);
 
   &.disappear {
     opacity: 0;
-    filter: blur(10px);
+    filter: blur(100px);
   }
 
   &:hover,
   &:focus-visible {
     svg path {
-      filter: drop-shadow(10px 10px rgba(red, 0.5))
-        drop-shadow(-10px -10px rgba(blue, 0.5));
+      filter: drop-shadow(24px 24px rgba(red, 0.5))
+        drop-shadow(-24px -24px rgba(blue, 0.5));
     }
   }
 
   svg {
     overflow: visible;
-    min-width: 175px;
+    width: 100%;
 
     path {
       transition: filter var(--transition-short);
       fill: var(--foreground);
     }
-  }
-
-  @media (min-width: 1024px) {
-    margin-inline: 0;
   }
 }
 

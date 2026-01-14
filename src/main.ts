@@ -58,7 +58,7 @@ window.jk_data = {
 scrollBtn(document.getElementById("scroll-btn") as HTMLButtonElement);
 background(document.getElementById("bg-canvas") as HTMLCanvasElement);
 hamburger(document.getElementById("hamburger") as HTMLButtonElement);
-easterEgg(document.getElementById("pig-btn") as HTMLButtonElement);
+easterEgg(document.getElementById("logo-btn") as HTMLButtonElement);
 projects(document.getElementById("projects") as HTMLElement);
 quotesSection(document.getElementById("quotes") as HTMLElement);
 header(document.getElementById("header") as HTMLElement);
