@@ -92,37 +92,152 @@
                     </span>
                   </li>
                   <li>
-                    Not sure how exactly this is used yet but there's a trick
-                    where people use this unicode character
-                    <span class="code code-inline" data-lang="html">
+                    <strong
+                      >The non-breaking space (
+                      <span class="code code-inline" data-lang="html">
+                        <!-- prettier-ignore -->
+                        <script data-no-format>` `</script> </span
+                      >) trick</strong
+                    >: the
+                    <a
+                      href="https://en.wikipedia.org/wiki/Non-breaking_space"
+                      target="_blank"
+                    >
+                      non-breaking space character</a
+                    >
+                    is used because it has no visual appearance but prevents
+                    collapsing like a normal space character would. See info
+                    about whitespace collapsing
+                    <a
+                      href="https://developer.mozilla.org/en-US/docs/Glossary/Whitespace"
+                      target="_blank"
+                      >here</a
+                    >. When used inside an element, it gives that element height
+                    without having to specify a
+                    <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>` `</script>
+                      <script data-no-format>`height`</script>
                     </span>
-                    in combination with some font shorthand to set the font size
-                    like this
+                    property. The height depends on the element's
+                    <span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`font-size`</script>
+                    </span>
+                    and
+                    <span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`line-height`</script> </span
+                    >.
+                    <ul>
+                      <li>
+                        In a
+                        <span class="code code-inline" data-lang="html">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`<p>`</script>
+                        </span>
+                        tag: ~
+                        <span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`1em`</script></span
+                        >(<span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`16px`</script>
+                        </span>
+                        in most browsers) for
+                        <span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`font-size`</script> </span
+                        >, with default
+                        <span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`line-height`</script>
+                        </span>
+                        typically ~1.2 times the
+                        <span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`font-size`</script> </span
+                        >.
+                      </li>
+                      <li>
+                        In a
+                        <span class="code code-inline" data-lang="html">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`<h1>`</script>
+                        </span>
+                        tag: ~<span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`2em`</script>
+                        </span>
+                        (<span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`32px`</script>
+                        </span>
+                        in most browsers) for
+                        <span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`font-size`</script> </span
+                        >, with default
+                        <span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`line-height`</script>
+                        </span>
+                        typically ~1.2 times the
+                        <span class="code code-inline" data-lang="css">
+                          <!-- prettier-ignore -->
+                          <script data-no-format>`font-size`</script> </span
+                        >.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    The
                     <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
                       <script data-no-format>`font:9in'`</script>
                     </span>
-                    Which can be used to set up the size of an element without
-                    using height, width, or padding. Not sure why, but it seems
-                    like you can't always copy/ paste this character. Here is
-                    the unicode information about this character: "U+00A0 :
-                    NO-BREAK SPACE [NBSP]". It seems like the non breaking space
-                    character gives the element it is in height. It's not a
-                    regular space, which the browser will parse and remove from
-                    the DOM if it has no siblings. Often people use this
-                    character with a
-                    <span class="code code-inline" data-lang="html">
+                    shorthand trick: This CSS shorthand sets the font-size to 9
+                    inches (the shortest amount of characters to give the
+                    largest possible size) and uses a straight quote (') as the
+                    font-family. Note that this only works if it's the last rule
+                    in your solution - the browser auto-completes the closing
+                    quote for you. If it's not the last rule, you'll have to use
+                    two quotes ('') to properly close the string before your
+                    next rule. Combined with the non-breaking space, this
+                    creates a ~<span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`<h1>`</script>
-                    </span>
-                    tag. From what I can tell, this is because that heading tag
-                    has a default font size of
+                      <script data-no-format>`985px`</script> </span
+                    >(9 inches × 96 DPI =
                     <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`2em`</script> </span
-                    >, which gives it extra height.
+                      <script data-no-format>`864px`</script>
+                    </span>
+                    ×
+                    <span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`1.14`</script>
+                    </span>
+                    line-height ≈
+                    <span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`985px`</script> </span
+                    >) tall element without using
+                    <span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`height`</script> </span
+                    >,
+                    <span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`width`</script> </span
+                    >, or
+                    <span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`padding`</script>
+                    </span>
+                    properties. <strong>Note:</strong> When copying this
+                    character, it sometimes gets converted to a regular space
+                    (depending on the program you copy it from). I've found that
+                    copying the character from an IDE usually works better than
+                    copying it from a browser.
                   </li>
                   <li>
                     Instead of using the
