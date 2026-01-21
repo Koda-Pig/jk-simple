@@ -1,0 +1,167 @@
+<article>
+  {{#> blog-post title="Target (20/01/2026) - 6th place"}}
+  <img
+    src="/css-battle/2026-01-20.png"
+    alt="Target (20/01/2026) - 6th place"
+    width="400"
+    height="300"
+    loading="lazy"
+  />
+  <p>Solution (174 characters):</p>
+  <div class="code" data-lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<p><img><style>*{margin:9%0;background:radial-gradient(1q,#AC342E 10px,#FEF6E2)var(--y,);*{--y:0/1%53q;p{rotate:90deg;*{padding:30;margin:-8 43q;border-radius:8cm;zoom:3;--y:`</script>
+  </div>
+
+  <p>
+    It's been a while since I did one of these. I haven't hit the top 5 lately,
+    and when I have, the solutions felt too plain to explain. This one placed
+    6th, but I still want to write about it because I find it interesting (and
+    also it's my website I can do what I want lol).
+  </p>
+
+  <p>
+    This solution uses a
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`radial-gradient`</script>
+    </span>
+    as the
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`background-image`</script>
+    </span>
+    for all elements, and the
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background"
+      target="_blank"
+    >
+      background
+    </a>
+    shorthand to set the size (<span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`var(--y)`</script> </span
+    >) and position (<span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`0`</script> </span
+    >) of the background image. By setting the size of the background on the
+    x-axis to a tiny value like
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`1%`</script>
+    </span>
+    and the y-axis to a large value like
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`53q`</script> </span
+    >, you can essentially create the visual appearance of solid lines, instead
+    of circular gradients. This works because the repeating circular gradients
+    on the x-axis are so close together, that they just look like one continuous
+    line.
+  </p>
+
+  <p>
+    The background really is the meat of this solution, but I'll explain the
+    other properties quickly for the sake of completeness:
+  </p>
+
+  <ul>
+    <li>
+      <span class="code code-inline" data-lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`margin`</script>
+      </span>
+      for the usual positioning
+    </li>
+
+    <li>
+      <span class="code code-inline" data-lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`rotate`</script>
+      </span>
+      to make the horizontal lines on the background of the
+      <span class="code code-inline" data-lang="html">
+        <!-- prettier-ignore -->
+        <script data-no-format>`<body>`</script>
+      </span>
+      element become vertical lines on the
+      <span class="code code-inline" data-lang="html">
+        <!-- prettier-ignore -->
+        <script data-no-format>`<p>`</script>
+      </span>
+      tag
+    </li>
+    <li>
+      <span class="code code-inline" data-lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`border-radius`</script>
+      </span>
+      (OK that one I refuse to explain, it's glaringly obvious),
+    </li>
+    <li>
+      <span class="code code-inline" data-lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`padding`</script>
+      </span>
+      to give the
+      <span class="code code-inline" data-lang="html">
+        <!-- prettier-ignore -->
+        <script data-no-format>`<img>`</script>
+      </span>
+      tag its size
+    </li>
+    <li>
+      <span class="code code-inline" data-lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`zoom`</script>
+      </span>
+      to increase the size of the color stop in the
+      <span class="code code-inline" data-lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`background`</script>
+      </span>
+      rule from
+      <span class="code code-inline" data-lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`10px`</script>
+      </span>
+      to
+      <span class="code code-inline" data-lang="css">
+        <!-- prettier-ignore -->
+        <script data-no-format>`30px`</script>
+      </span>
+      for the
+      <span class="code code-inline" data-lang="html">
+        <!-- prettier-ignore -->
+        <script data-no-format>`<img>`</script>
+      </span>
+      tag.
+    </li>
+  </ul>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" data-lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`* {
+  margin: 9%0;
+  background: radial-gradient(1Q, #ac342e 10px, #fef6e2) var(--y,);
+  * {
+    --y: 0/1%53q;
+    p {
+      rotate: 90deg;
+      * {
+        padding: 30;
+        margin: -8 43Q;
+        border-radius: 8cm;
+        zoom: 3;
+        --y: ;
+      }
+    }
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
