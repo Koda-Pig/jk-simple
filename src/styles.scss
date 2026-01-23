@@ -290,7 +290,9 @@ button:not(:disabled) {
   background: rgba(var(--rgb-background), 0.5);
 
   svg {
-    transition: rotate 0.8s, transform 0.8s;
+    transition:
+      rotate 0.8s,
+      transform 0.8s;
   }
 
   path {
@@ -769,6 +771,11 @@ a.menu-item {
       margin-block: 0;
     }
   }
+}
+
+.yt-video {
+  margin-top: 40px;
+  aspect-ratio: 560 / 315;
 }
 
 @keyframes fade-in {
