@@ -133,7 +133,8 @@ a {
   text-decoration: none;
   position: relative;
   display: inline-block;
-  transition: var(--transition-short) color;
+  transition-property: scale width;
+  transition-duration: var(--transition-short);
 
   &::after {
     content: "";
@@ -152,6 +153,10 @@ a {
     &::after {
       width: 100%;
     }
+  }
+
+  &:active {
+    scale: 0.975;
   }
 }
 
