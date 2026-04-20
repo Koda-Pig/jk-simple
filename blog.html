@@ -244,26 +244,62 @@
                 from an IDE usually works better than copying it from a browser.
               </li>
               <li>
-                The font property and its shorthand are useful in another way:
-                as built-in variables. From a code golfing perspective, the font
+                The
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font`</script>
+                </span>
+                property and its shorthand are useful in another way: as
+                built-in variables. From a code golfing perspective, the
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font`</script>
+                </span>
                 property is a gift that the browser has delivered to us from
                 which we can obtain and alter values between elements, without
-                using the var syntax. For instance, say you have a border with a
-                width of 40px on an element, and a child element needs the same
-                border, but with a width of 20px. One way to do this would be to
-                use a variable, like this:
+                using the
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`var()`</script>
+                </span>
+                syntax. For instance, say you have a
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`border`</script>
+                </span>
+                with a width of 40px on an element, and a child element needs
+                the same
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`border`</script>
+                </span>
+                , but with a width of 20px. One way to do this would be to use a
+                variable, like this:
                 <div class="code" data-lang="css">
                   <!-- prettier-ignore -->
-                  <script data-no-format>`.parent {
+                  <script data-no-format>`* {
   border: var(--border-width, 40px) solid rebeccapurple;
   .child {
     --border-width: 20px;
   }
 }`</script>
                 </div>
-                A far shorter way is to use a unit for the border width that is
-                affected by font size, and then change the font size on the
-                child element. Eg:
+                A far shorter way is to use a unit for the
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`border-width`</script>
+                </span>
+                that is affected by
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font-size`</script>
+                </span>
+                , and then change the
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font-size`</script>
+                </span>
+                on the child element. Eg:
                 <div class="code" data-lang="css">
                   <!-- prettier-ignore -->
                   <script data-no-format>`* {
@@ -274,9 +310,22 @@
 }`</script>
                 </div>
                 This has the exact same effect, but is far shorter. That's just
-                using font size, but the font shorthand property also lets you
-                set line height. Here's an example of how you'd take advantage
-                of that:
+                using
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font-size`</script>
+                </span>
+                , but the
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font`</script>
+                </span>
+                shorthand also lets you set
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`line-height`</script>
+                </span>
+                . Here's an example of how you'd take advantage of that:
                 <div class="code" data-lang="css">
                   <!-- prettier-ignore -->
                   <script data-no-format>`* {
@@ -285,12 +334,42 @@
     font: 8px/2 "";
   }
 }`</script>
-                  In this example, the parent elements gradient color stops are
-                  at 40px (5ch) and 90px (5lh). We can then use the font
-                  property on the child to change font size and line height so
-                  that the at color stops for the childs gradient are
-                  effectively at 20px and 80px.
                 </div>
+                In this example, the color stops in the parent element's
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`background`</script>
+                </span>
+                gradient are at 40px (<span
+                  class="code code-inline"
+                  data-lang="css"
+                >
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`5ch`</script></span
+                >) and 90px (<span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`5lh`</script></span
+                >). We can then use the
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font`</script>
+                </span>
+                property on the child to change
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font-size`</script>
+                </span>
+                and
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`line-height`</script>
+                </span>
+                so that the color stops in the child's
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`background`</script>
+                </span>
+                gradient are effectively at 20px and 80px.
               </li>
               <li>
                 Instead of using the
