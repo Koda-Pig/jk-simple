@@ -91,168 +91,219 @@
                       <script data-no-format>`[f]{...`</script>
                     </span>
                   </li>
+                </ul>
+              </li>
+
+              <li>
+                <strong
+                  >The non-breaking space (
+                  <span class="code code-inline" data-lang="html">
+                    <!-- prettier-ignore -->
+                    <script data-no-format>` `</script> </span
+                  >) trick</strong
+                >: the
+                <a
+                  href="https://en.wikipedia.org/wiki/Non-breaking_space"
+                  target="_blank"
+                >
+                  non-breaking space character</a
+                >
+                is used because it has no visual appearance but prevents
+                collapsing like a normal space character would. See info about
+                whitespace collapsing
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Glossary/Whitespace"
+                  target="_blank"
+                  >here</a
+                >. When used inside an element, it gives that element height
+                without having to specify a
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`height`</script>
+                </span>
+                property. The height depends on the element's
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font-size`</script>
+                </span>
+                and
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`line-height`</script> </span
+                >.
+                <ul>
                   <li>
-                    <strong
-                      >The non-breaking space (
-                      <span class="code code-inline" data-lang="html">
-                        <!-- prettier-ignore -->
-                        <script data-no-format>` `</script> </span
-                      >) trick</strong
-                    >: the
-                    <a
-                      href="https://en.wikipedia.org/wiki/Non-breaking_space"
-                      target="_blank"
-                    >
-                      non-breaking space character</a
-                    >
-                    is used because it has no visual appearance but prevents
-                    collapsing like a normal space character would. See info
-                    about whitespace collapsing
-                    <a
-                      href="https://developer.mozilla.org/en-US/docs/Glossary/Whitespace"
-                      target="_blank"
-                      >here</a
-                    >. When used inside an element, it gives that element height
-                    without having to specify a
-                    <span class="code code-inline" data-lang="css">
+                    In a
+                    <span class="code code-inline" data-lang="html">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`height`</script>
+                      <script data-no-format>`<p>`</script>
                     </span>
-                    property. The height depends on the element's
+                    tag: ~
                     <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`font-size`</script>
+                      <script data-no-format>`1em`</script></span
+                    >(<span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`16px`</script>
                     </span>
-                    and
+                    in most browsers) for
                     <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`line-height`</script> </span
+                      <script data-no-format>`font-size`</script> </span
+                    >, with default
+                    <span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`line-height`</script>
+                    </span>
+                    typically ~1.2 times the
+                    <span class="code code-inline" data-lang="css">
+                      <!-- prettier-ignore -->
+                      <script data-no-format>`font-size`</script> </span
                     >.
-                    <ul>
-                      <li>
-                        In a
-                        <span class="code code-inline" data-lang="html">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`<p>`</script>
-                        </span>
-                        tag: ~
-                        <span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`1em`</script></span
-                        >(<span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`16px`</script>
-                        </span>
-                        in most browsers) for
-                        <span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`font-size`</script> </span
-                        >, with default
-                        <span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`line-height`</script>
-                        </span>
-                        typically ~1.2 times the
-                        <span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`font-size`</script> </span
-                        >.
-                      </li>
-                      <li>
-                        In a
-                        <span class="code code-inline" data-lang="html">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`<h1>`</script>
-                        </span>
-                        tag: ~<span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`2em`</script>
-                        </span>
-                        (<span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`32px`</script>
-                        </span>
-                        in most browsers) for
-                        <span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`font-size`</script> </span
-                        >, with default
-                        <span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`line-height`</script>
-                        </span>
-                        typically ~1.2 times the
-                        <span class="code code-inline" data-lang="css">
-                          <!-- prettier-ignore -->
-                          <script data-no-format>`font-size`</script> </span
-                        >.
-                      </li>
-                    </ul>
                   </li>
                   <li>
-                    The
-                    <span class="code code-inline" data-lang="css">
+                    In a
+                    <span class="code code-inline" data-lang="html">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`font:9in'`</script>
+                      <script data-no-format>`<h1>`</script>
                     </span>
-                    shorthand trick: This CSS shorthand sets the font-size to 9
-                    inches (the shortest amount of characters to give the
-                    largest possible size) and uses a straight quote (') as the
-                    font-family. Note that this only works if it's the last rule
-                    in your solution - the browser auto-completes the closing
-                    quote for you. If it's not the last rule, you'll have to use
-                    two quotes ('') to properly close the string before your
-                    next rule. Combined with the non-breaking space, this
-                    creates a ~<span class="code code-inline" data-lang="css">
+                    tag: ~<span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`985px`</script> </span
-                    >(9 inches × 96 DPI =
-                    <span class="code code-inline" data-lang="css">
-                      <!-- prettier-ignore -->
-                      <script data-no-format>`864px`</script>
+                      <script data-no-format>`2em`</script>
                     </span>
-                    ×
-                    <span class="code code-inline" data-lang="css">
+                    (<span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`1.14`</script>
+                      <script data-no-format>`32px`</script>
                     </span>
-                    line-height ≈
+                    in most browsers) for
                     <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`985px`</script> </span
-                    >) tall element without using
+                      <script data-no-format>`font-size`</script> </span
+                    >, with default
                     <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`height`</script> </span
-                    >,
-                    <span class="code code-inline" data-lang="css">
-                      <!-- prettier-ignore -->
-                      <script data-no-format>`width`</script> </span
-                    >, or
-                    <span class="code code-inline" data-lang="css">
-                      <!-- prettier-ignore -->
-                      <script data-no-format>`padding`</script>
+                      <script data-no-format>`line-height`</script>
                     </span>
-                    properties. <strong>Note:</strong> When copying this
-                    character, it sometimes gets converted to a regular space
-                    (depending on the program you copy it from). I've found that
-                    copying the character from an IDE usually works better than
-                    copying it from a browser.
-                  </li>
-                  <li>
-                    Instead of using the
+                    typically ~1.2 times the
                     <span class="code code-inline" data-lang="css">
                       <!-- prettier-ignore -->
-                      <script data-no-format>`circle`</script>
-                    </span>
-                    keyword in making a radial gradient, use the shortest length
-                    value (<span class="code code-inline" data-lang="css">
-                      <!-- prettier-ignore -->
-                      <script data-no-format>`1q`</script></span
-                    >). This also allows you to drop the last 0 for the last
-                    color stop in the gradient.
+                      <script data-no-format>`font-size`</script> </span
+                    >.
                   </li>
                 </ul>
+              </li>
+              <li>
+                The
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`font:9in'`</script>
+                </span>
+                shorthand trick: This CSS shorthand sets the font-size to 9
+                inches (the shortest amount of characters to give the largest
+                possible size) and uses a straight quote (') as the font-family.
+                Note that this only works if it's the last rule in your solution
+                - the browser auto-completes the closing quote for you. If it's
+                not the last rule, you'll have to use two quotes ('') to
+                properly close the string before your next rule. Combined with
+                the non-breaking space, this creates a ~<span
+                  class="code code-inline"
+                  data-lang="css"
+                >
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`985px`</script> </span
+                >(9 inches × 96 DPI =
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`864px`</script>
+                </span>
+                ×
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`1.14`</script>
+                </span>
+                line-height ≈
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`985px`</script> </span
+                >) tall element without using
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`height`</script> </span
+                >,
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`width`</script> </span
+                >, or
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`padding`</script>
+                </span>
+                properties. <strong>Note:</strong> When copying this character,
+                it sometimes gets converted to a regular space (depending on the
+                program you copy it from). I've found that copying the character
+                from an IDE usually works better than copying it from a browser.
+              </li>
+              <li>
+                The font property and its shorthand are useful in another way:
+                as built-in variables. From a code golfing perspective, the font
+                property is a gift that the browser has delivered to us from
+                which we can obtain and alter values between elements, without
+                using the var syntax. For instance, say you have a border with a
+                width of 40px on an element, and a child element needs the same
+                border, but with a width of 20px. One way to do this would be to
+                use a variable, like this:
+                <div class="code" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`.parent {
+  border: var(--border-width, 40px) solid rebeccapurple;
+  .child {
+    --border-width: 20px;
+  }
+}`</script>
+                </div>
+                A far shorter way is to use a unit for the border width that is
+                affected by font size, and then change the font size on the
+                child element. Eg:
+                <div class="code" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`* {
+  border: 5ch solid rebeccapurple;
+  .child {
+    font: 8px "";
+  }
+}`</script>
+                </div>
+                This has the exact same effect, but is far shorter. That's just
+                using font size, but the font shorthand property also lets you
+                set line height. Here's an example of how you'd take advantage
+                of that:
+                <div class="code" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`* {
+  background: radial-gradient(red 5ch, green 0 5lh);
+  .child {
+    font: 8px/2 "";
+  }
+}`</script>
+                  In this example, the parent elements gradient color stops are
+                  at 40px (5ch) and 90px (5lh). We can then use the font
+                  property on the child to change font size and line height so
+                  that the at color stops for the childs gradient are
+                  effectively at 20px and 80px.
+                </div>
+              </li>
+              <li>
+                Instead of using the
+                <span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`circle`</script>
+                </span>
+                keyword in making a radial gradient, use the shortest length
+                value (<span class="code code-inline" data-lang="css">
+                  <!-- prettier-ignore -->
+                  <script data-no-format>`1q`</script></span
+                >). This also allows you to drop the last 0 for the last color
+                stop in the gradient.
               </li>
             </ul>
 
@@ -265,6 +316,7 @@
         <!-- would be cool to change this to use a script that just adds all the blogs for me in the src/partials/blogs directory -->
         <!-- prettier-ignore -->
         <div>
+{{> blogs/blog40}}
 {{> blogs/blog39}}
 {{> blogs/blog38}}
 {{> blogs/blog37}}
