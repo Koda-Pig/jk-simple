@@ -1,0 +1,72 @@
+<article>
+  {{#> blog-post title="Target (28/04/2026) - 1st place"}}
+  <img
+    src="/css-battle/2026-04-28.png"
+    alt="Target (28/04/2026) - 1st place"
+    width="400"
+    height="300"
+    loading="lazy"
+  />
+  <p>Solution (124 characters):</p>
+  <div class="code" data-lang="html">
+    <!-- prettier-ignore -->
+    <script data-no-format>`<p> <p x> <p> <style>&,[x]{rotate:90deg;background:#C72C;p{scale:1.111;background:#D9D9D9;margin:212 84-328;border:9px solid`</script>
+  </div>
+
+  <p>
+    Ooh this was a cool one. It's always satisfying when you can get one
+    property to fill multiple purposes. In this case using
+    <span class="code code-inline" data-lang="css">
+      <!-- prettier-ignore -->
+      <script data-no-format>`scale`</script>
+    </span>
+    to reset the
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context"
+      target="_blank"
+      >stacking context</a
+    >
+    and to set the correct size for the paragraphs. Check out the video below
+    for a deep dive.
+  </p>
+
+  <iframe
+    class="yt-video"
+    width="100%"
+    height="auto"
+    src="https://www.youtube.com/embed/SUVDpLpqzhE?si=7O5nEc-AUdMbpnlx"
+    title="battle 28/04/2026"
+    frameborder="0"
+    allow="
+      accelerometer;
+      autoplay;
+      clipboard-write;
+      encrypted-media;
+      gyroscope;
+      picture-in-picture;
+      web-share;
+    "
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+
+  <p><strong>Here are the styles, unminified:</strong></p>
+  <div class="code" data-lang="css">
+    <!-- prettier-ignore -->
+    <script data-no-format>
+`&,
+[x] {
+  rotate: 90deg;
+  background: #c72c;
+  p {
+    scale: 1.111;
+    background: #d9d9d9;
+    margin: 212 84-328;
+    border: 9px solid;
+  }
+}`
+</script>
+  </div>
+
+  {{/blog-post}}
+</article>
