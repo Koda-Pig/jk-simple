@@ -1,6 +1,6 @@
-// here we apply a view transition to the <main> element.
-// everything outside of <main> remains the same across pages.
-// this is a progressive enhancement, and is not supported in firefox at this time (02/06/2025)
+/* here we apply a view transition to the <main> element.
+everything outside of <main> remains the same across pages.
+this is a progressive enhancement, and is not supported in firefox at this time (02/06/2025) */
 @view-transition {
   navigation: auto;
 }
@@ -15,6 +15,7 @@
 }
 
 :root {
+  color-scheme: dark;
   --background: #16161d;
   --foreground: #ededed;
 
@@ -268,8 +269,8 @@ button:not(:disabled) {
     --heading-font-size: max(12vw, 3rem);
   }
 
-  // 1851px and up on firefox and safari broken for some reason
-  // hacky fix until I feel like fixing the root cause
+  /*  1851px and up on firefox and safari broken for some reason
+   hacky fix until I feel like fixing the root cause */
   @media (min-width: 1851px) {
     --heading-font-size: max(11vw, 3rem);
   }
@@ -380,8 +381,8 @@ button:not(:disabled) {
   &:hover,
   &:focus-visible {
     svg path {
-      filter: drop-shadow(24px 24px rgba(red, 0.5))
-        drop-shadow(-24px -24px rgba(blue, 0.5));
+      filter: drop-shadow(24px 24px color-mix(in srgb, red 50%, transparent))
+        drop-shadow(-24px -24px color-mix(in srgb, blue 50%, transparent));
     }
   }
 
@@ -392,6 +393,8 @@ button:not(:disabled) {
     path {
       transition: filter var(--transition-short);
       fill: var(--foreground);
+      filter: drop-shadow(0 0 color-mix(in srgb, red 50%, transparent))
+        drop-shadow(0 0 color-mix(in srgb, blue 50%, transparent));
     }
   }
 }
@@ -438,7 +441,7 @@ a.menu-item {
   }
 }
 
-// <details>
+/* <details> */
 .expandable {
   &::details-content {
     content-visibility: visible;
@@ -456,8 +459,8 @@ a.menu-item {
     }
   }
 
-  // <summary>
-  &-trigger {
+  /* <summary> */
+  .expandable-trigger {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -475,12 +478,12 @@ a.menu-item {
     }
   }
 
-  &-content {
+  .expandable-content {
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows var(--transition-short) var(--transition-zip);
 
-    &-inner {
+    .expandable-content-inner {
       overflow: clip;
       min-height: 0;
       margin-left: 12px;
@@ -735,18 +738,15 @@ a.menu-item {
     margin-bottom: 2rem;
   }
 
-  &-intro {
+  .blog-intro {
     h2 {
       margin-bottom: 0.5rem;
     }
   }
-  &-section {
-    @extend .projects;
+  .blog-section {
     display: flex;
   }
-  &-post {
-    @extend .project;
-
+  .blog-post {
     h3 {
       color: var(--accent);
     }
@@ -761,7 +761,7 @@ a.menu-item {
   .code {
     margin-block: 1rem;
     font-family: monospace;
-    background: rgba(black, 0.7);
+    background: color-mix(in srgb, black 70%, transparent);
     color: rgb(var(--rgb-blue));
     padding: 1rem;
     border-radius: 0.5rem;
@@ -772,13 +772,13 @@ a.menu-item {
     word-wrap: break-word;
     overflow-wrap: break-word;
     tab-size: 2;
+  }
 
-    &-inline {
-      display: inline-block;
-      padding: 0.2rem 0.4rem;
-      border: none;
-      margin-block: 0;
-    }
+  .code-inline {
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+    border: none;
+    margin-block: 0;
   }
 }
 

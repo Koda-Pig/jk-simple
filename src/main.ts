@@ -1,4 +1,4 @@
-import "./styles.scss";
+import "./styles.css";
 import background from "./scripts/background";
 import scrollBtn from "./scripts/scrollBtn";
 import hamburger from "./scripts/hamburger";
