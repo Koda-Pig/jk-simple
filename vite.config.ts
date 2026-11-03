@@ -6,7 +6,7 @@ import { resolve } from "path";
 export default defineConfig({
   plugins: [
     handlebars({
-      partialDirectory: resolve(__dirname, "src/partials"),
+      partialDirectory: resolve(import.meta.dirname, "src/partials"),
       helpers: {
         // format the date for the anchor link
         dateAnchor: (title: string) => {
